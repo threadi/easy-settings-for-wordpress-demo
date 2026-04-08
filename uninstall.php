@@ -13,6 +13,9 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	die;
 }
 
+// save our path.
+const ESFWD_FILE = __FILE__;
+
 // embed the composer packages.
 require __DIR__ . '/vendor/autoload.php';
 
