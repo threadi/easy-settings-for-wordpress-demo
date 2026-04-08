@@ -296,7 +296,7 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$setting->set_type( 'string' );
 	$field = new Value( $settings_obj );
 	$field->set_title( __( 'Value', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_value( 'Hallo World' );
+	$field->set_value( 'Hallo World' );
 	$field->set_description( __( 'This allows you to show the value of this setting without any change to change it.', 'easy-settings-for-wordpress-demo' ) );
 	$setting->set_field( $field );
 
