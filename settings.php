@@ -294,9 +294,9 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$setting = $settings_obj->add_setting( 'esfw_demo_value' );
 	$setting->set_section( $section );
 	$setting->set_type( 'string' );
-	$setting->set_default( 'Hallo World' );
 	$field = new Value( $settings_obj );
 	$field->set_title( __( 'Value', 'easy-settings-for-wordpress-demo' ) );
+    $field->set_value( 'Hallo World' );
 	$field->set_description( __( 'This allows you to show the value of this setting without any change to change it.', 'easy-settings-for-wordpress-demo' ) );
 	$setting->set_field( $field );
 
@@ -533,7 +533,7 @@ function easy_settings_for_wordpress_demo_get_settings_object(): Settings {
 	 * Get the object one time.
 	 */
 	if ( null === $settings ) {
-		$settings = new Settings( __FILE__ );
+		$settings = new Settings( ESFWD_FILE );
 	}
 
 	// return it.

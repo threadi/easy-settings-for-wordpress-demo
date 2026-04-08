@@ -22,6 +22,9 @@ if ( PHP_VERSION_ID < 80000 ) { // @phpstan-ignore smaller.alwaysFalse
 	return;
 }
 
+// save our path.
+const ESFWD_FILE = __FILE__;
+
 // embed the composer packages.
 require __DIR__ . '/vendor/autoload.php';
 
