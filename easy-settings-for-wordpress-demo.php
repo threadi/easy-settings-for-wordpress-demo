@@ -3,7 +3,7 @@
  * Plugin Name:       Easy Settings for WordPress Demo
  * Description:       This plugin demonstrates the usage of the composer package threadi/easy-settings-for-wordpress.
  * Requires at least: 6.0
- * Requires PHP:      8.0
+ * Requires PHP:      8.1
  * Version:           @@VersionNumber@@
  * Author:            Thomas Zwirner
  * Author URI:        https://www.thomaszwirner.de

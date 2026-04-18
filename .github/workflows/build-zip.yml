@@ -21,6 +21,8 @@ jobs:
           rm readme.md
           rm .gitignore
           rm -fr .github
+          rm -fr releases
+          rm -fr build
 
       - name: Generate autoloader
         run: composer dump-autoload -oa --no-dev
