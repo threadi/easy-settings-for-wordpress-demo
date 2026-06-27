@@ -17,7 +17,8 @@ jobs:
       - name: Prepare build
         run: |
           composer install
-          rm composer.sh
+          rm dev-composer.sh
+          rm dev-composer.json
           rm readme.md
           rm .gitignore
           rm -fr .github
