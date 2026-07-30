@@ -6,10 +6,18 @@
       "options": {
         "symlink": true
       }
+    },
+    {
+      "type": "path",
+      "url": "../../../easy-dialog-for-wordpress/",
+      "options": {
+        "symlink": true
+      }
     }
   ],
   "minimum-stability": "dev",
   "require": {
+    "threadi/easy-dialog-for-wordpress": "*",
     "threadi/easy-settings-for-wordpress": "*"
   }
 }
