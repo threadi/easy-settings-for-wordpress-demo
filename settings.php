@@ -581,6 +581,16 @@ function easy_settings_for_wordpress_demo_init(): void {
     $field->set_description( $debug['view'] );
     $setting->set_field( $field );
 
+	// add setting.
+	$setting = $settings_obj->add_setting( 'settings_debug_errors' );
+	$setting->set_section( $debug_section );
+	$setting->set_autoload( false );
+	$setting->prevent_export( true );
+	$field = new TextInfo( $settings_obj );
+	$field->set_title( __( 'Errors', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( print_r( easy_settings_for_wordpress_demo_get_settings_object()->get_errors(), true ) );
+	$setting->set_field( $field );
+
     // add setting.
     $setting = $settings_obj->add_setting( 'settings_debug_settings' );
     $setting->set_section( $debug_section );
