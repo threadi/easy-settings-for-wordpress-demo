@@ -35,14 +35,14 @@ function easy_settings_for_wordpress_demo_init(): void {
 	 * Configure the basic settings object.
 	 */
 	$settings_obj = easy_settings_for_wordpress_demo_get_settings_object();
-	$settings_obj->set_slug( 'demo_settings' ); // use a slug to use intern.
+	$settings_obj->set_slug( 'demo_settings' ); // set a slug to use intern.
 	$settings_obj->set_menu_title( _x( 'Demo Settings', 'settings menu title', 'easy-settings-for-wordpress-demo' ) ); // set the menu title.
 	$settings_obj->set_title( __( 'Demo Settings', 'easy-settings-for-wordpress-demo' ) ); // set the settings title.
 	$settings_obj->set_menu_slug( 'demo-settings' ); // set the menu slug.
 	$settings_obj->set_menu_parent_slug( 'options-general.php' ); // set where the settings are assigned to, e.g., 'options-general.php' for the WordPress-own settings menu.
 	$settings_obj->show_settings_link_in_plugin_list( true ); // set to true to show link to settings on plugin list.
-    $settings_obj->set_method( 'simple' );
-    $settings_obj->set_view( 'dataview' );
+    //$settings_obj->set_method( 'simple' );
+    //$settings_obj->set_view( 'dataview' );
     //$settings_obj->set_auto_save( 'tab_change' );
 
 	// get the settings page.
@@ -54,9 +54,9 @@ function easy_settings_for_wordpress_demo_init(): void {
 	}
 
 	// add a tab on this page.
-	$fields_tab = $settings_page->add_tab( 'basic', 10 );
+	$fields_tab = $settings_page->add_tab( 'demo_basic', 10 );
 	$fields_tab->set_title( __( 'The fields', 'easy-settings-for-wordpress-demo' ) );
-	$fields_tab->set_description( '<p>' . __( 'These tab presents the simple fields we support.', 'easy-settings-for-wordpress-demo' ) . '</p>' );
+	$fields_tab->set_description( '<p>' . __( 'These tab presents the simple fields the composer package "Easy Settings for WordPress" support.', 'easy-settings-for-wordpress-demo' ) . '</p>' );
 	$settings_page->set_default_tab( $fields_tab );
 
 	// add a section.
@@ -612,6 +612,16 @@ function easy_settings_for_wordpress_demo_init(): void {
 }
 add_action( 'init', 'easy_settings_for_wordpress_demo_init' );
 
+/**
+ * Show a second settings page on base of JSON.
+ *
+ * @return void
+ */
+function easy_settings_for_wordpress_demo_init_second(): void {
+    $settings_obj = easy_settings_for_wordpress_demo_get_settings_object();
+    $settings_obj->set_json_by_path(  __DIR__ . '/example.json' );
+}
+//add_action( 'init', 'easy_settings_for_wordpress_demo_init_second', 20 );
 
 /**
  * Return the settings object.
@@ -682,8 +692,8 @@ function easy_settings_for_wordpress_demo_get_settings_errors(): void {
     }
 
     // log these errors.
-    foreach( $settings_obj->get_errors()->get_error_messages() as $error ) {
-        _doing_it_wrong( '\easySettingsForWordPress\Settings::add_settings()', esc_html( $error ), '1.0.0' );
+    foreach( $settings_obj->get_errors()->errors as $key => $errors ) {
+        _doing_it_wrong( '\easySettingsForWordPress\Settings::add_settings()', '<em>' . esc_html( $key ) . '</em>: ' . esc_html( implode( ' ', $errors ) ), '1.0.0' );
     }
 }
-add_action( 'admin_init', 'easy_settings_for_wordpress_demo_get_settings_errors' );
+add_action( 'admin_init', 'easy_settings_for_wordpress_demo_get_settings_errors', 20 );
