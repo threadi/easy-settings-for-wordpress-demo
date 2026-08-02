@@ -41,13 +41,13 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$settings_obj->set_menu_slug( 'demo-settings' ); // set the menu slug.
 	$settings_obj->set_menu_parent_slug( 'options-general.php' ); // set where the settings are assigned to, e.g., 'options-general.php' for the WordPress-own settings menu.
 	$settings_obj->show_settings_link_in_plugin_list( true ); // set to true to show link to settings on plugin list.
-    $settings_obj->set_view( get_option( 'esfwd_view' ) );
+	$settings_obj->set_view( get_option( 'esfwd_view' ) );
 
-    // get the actual for to set its styling.
-    $view = $settings_obj->get_views()->get_view();
-    if( $view instanceof \easySettingsForWordPress\View_Base ) {
-        $view->set_styling( get_option( 'esfwd_view_classic_style' ) );
-    }
+	// get the actual for to set its styling.
+	$view = $settings_obj->get_views()->get_view();
+	if ( $view instanceof \easySettingsForWordPress\View_Base ) {
+		$view->set_styling( get_option( 'esfwd_view_classic_style' ) );
+	}
 
 	// get the settings page.
 	$settings_page = $settings_obj->get_page( 'demo-settings' );
@@ -277,29 +277,29 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$field->set_placeholder( __( 'This is a placeholder', 'easy-settings-for-wordpress-demo' ) );
 	$setting->set_field( $field );
 
-    // add setting for a Text.
-    $setting = $settings_obj->add_setting( 'esfw_demo_text_with_callback' );
-    $setting->set_type( 'string' );
-    $setting->set_default( '' );
-    $setting->set_section( $section );
-    $setting->set_read_callback( 'easy_settings_for_wordpress_demo_read_callback' );
-    $field = new Text( $settings_obj );
-    $field->set_title( __( 'Text with a read callback', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( __( 'This field is run through a read callback to change its content.', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_placeholder( __( 'This is a placeholder', 'easy-settings-for-wordpress-demo' ) );
-    $setting->set_field( $field );
+	// add setting for a Text.
+	$setting = $settings_obj->add_setting( 'esfw_demo_text_with_callback' );
+	$setting->set_type( 'string' );
+	$setting->set_default( '' );
+	$setting->set_section( $section );
+	$setting->set_read_callback( 'easy_settings_for_wordpress_demo_read_callback' );
+	$field = new Text( $settings_obj );
+	$field->set_title( __( 'Text with a read callback', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( __( 'This field is run through a read callback to change its content.', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_placeholder( __( 'This is a placeholder', 'easy-settings-for-wordpress-demo' ) );
+	$setting->set_field( $field );
 
-    // add setting for a Text.
-    $setting = $settings_obj->add_setting( 'esfw_demo_text_with_save_callback' );
-    $setting->set_type( 'string' );
-    $setting->set_default( '' );
-    $setting->set_section( $section );
-    $setting->set_read_callback( 'easy_settings_for_wordpress_demo_save_callback' );
-    $field = new Text( $settings_obj );
-    $field->set_title( __( 'Text with a save callback', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( __( 'This field is run through a callback to check the content before saving it.', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_placeholder( __( 'This is a placeholder', 'easy-settings-for-wordpress-demo' ) );
-    $setting->set_field( $field );
+	// add setting for a Text.
+	$setting = $settings_obj->add_setting( 'esfw_demo_text_with_save_callback' );
+	$setting->set_type( 'string' );
+	$setting->set_default( '' );
+	$setting->set_section( $section );
+	$setting->set_read_callback( 'easy_settings_for_wordpress_demo_save_callback' );
+	$field = new Text( $settings_obj );
+	$field->set_title( __( 'Text with a save callback', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( __( 'This field is run through a callback to check the content before saving it.', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_placeholder( __( 'This is a placeholder', 'easy-settings-for-wordpress-demo' ) );
+	$setting->set_field( $field );
 
 	// add setting for a Textarea.
 	$setting = $settings_obj->add_setting( 'esfw_demo_textarea' );
@@ -357,7 +357,7 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$field = new Text( $settings_obj );
 	$field->set_title( __( 'Text', 'easy-settings-for-wordpress-demo' ) );
 	$field->set_description( __( 'This allows you to add a simple text in the settings.', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_placeholder( __( 'This is a placeholder', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_placeholder( __( 'This is a placeholder', 'easy-settings-for-wordpress-demo' ) );
 	$field->add_depend( $master_setting, 1 );
 	$setting->set_field( $field );
 
@@ -420,7 +420,7 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$sub_1_tab = $subtabs_tab->add_tab( 'first', 10 );
 	$sub_1_tab->set_title( __( 'First', 'easy-settings-for-wordpress-demo' ) );
 	$sub_1_tab->set_hide_save( true );
-    $subtabs_tab->set_default_tab( $sub_1_tab );
+	$subtabs_tab->set_default_tab( $sub_1_tab );
 
 	// add a tab on this page to demonstration dependency.
 	$sub_2_tab = $subtabs_tab->add_tab( 'second', 20 );
@@ -544,50 +544,56 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$field->add_data( 'dialog', (string) wp_json_encode( $dialog ) );
 	$setting->set_field( $field );
 
-    // add a tab on this page to show the debug information of the settings object.
-    $debug_tab = $settings_page->add_tab( 'settings_debug', 50 );
-    $debug_tab->set_title( __( 'Debug', 'easy-settings-for-wordpress-demo' ) );
-    $debug_tab->set_hide_save( true );
+	// add a tab on this page to show the debug information of the settings object.
+	$debug_tab = $settings_page->add_tab( 'settings_debug', 50 );
+	$debug_tab->set_title( __( 'Debug', 'easy-settings-for-wordpress-demo' ) );
+	$debug_tab->set_hide_save( true );
 
-    // add a section.
-    $debug_section = $debug_tab->add_section( 'import_export_section', 10 );
-    $debug_section->set_title( __( 'Use import and export of settings', 'easy-settings-for-wordpress-demo' ) );
+	// add a section.
+	$debug_section = $debug_tab->add_section( 'import_export_section', 10 );
+	$debug_section->set_title( __( 'Use import and export of settings', 'easy-settings-for-wordpress-demo' ) );
 
-    // get the debug information.
-    $debug = $settings_obj->debug();
+	// get the debug information.
+	$debug = $settings_obj->debug();
 
-    // add setting.
-    $setting = $settings_obj->add_setting( 'settings_debug_plugin' );
-    $setting->set_section( $debug_section );
-    $setting->set_autoload( false );
-    $setting->prevent_export( true );
-    $field = new TextInfo( $settings_obj );
-    $field->set_title( __( 'Used plugin', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( $debug['plugin_path'] );
-    $setting->set_field( $field );
+	// add setting.
+	$setting = $settings_obj->add_setting( 'settings_debug_plugin' );
+	$setting->set_section( $debug_section );
+	$setting->set_autoload( false );
+	$setting->prevent_export( true );
+	$field = new TextInfo( $settings_obj );
+	$field->set_title( __( 'Used plugin', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( $debug['plugin_path'] );
+	$setting->set_field( $field );
 
-    // add setting.
-    $setting = $settings_obj->add_setting( 'settings_debug_method' );
-    $setting->set_section( $debug_section );
-    $setting->set_autoload( false );
-    $setting->prevent_export( true );
-    $field = new TextInfo( $settings_obj );
-    $field->set_title( __( 'Used method', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( $debug['method'] );
-    $setting->set_field( $field );
+	// add setting.
+	$setting = $settings_obj->add_setting( 'settings_debug_method' );
+	$setting->set_section( $debug_section );
+	$setting->set_autoload( false );
+	$setting->prevent_export( true );
+	$field = new TextInfo( $settings_obj );
+	$field->set_title( __( 'Used method', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( $debug['method'] );
+	$setting->set_field( $field );
 
-    // add setting.
-    $setting = $settings_obj->add_setting( 'settings_debug_view' );
-    $setting->set_section( $debug_section );
-    $setting->set_autoload( false );
-    $setting->prevent_export( true );
-    $field = new TextInfo( $settings_obj );
-    $field->set_title( __( 'Used view', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( $debug['view'] );
-    $setting->set_field( $field );
+	// add setting.
+	$setting = $settings_obj->add_setting( 'settings_debug_view' );
+	$setting->set_section( $debug_section );
+	$setting->set_autoload( false );
+	$setting->prevent_export( true );
+	$field = new TextInfo( $settings_obj );
+	$field->set_title( __( 'Used view', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( $debug['view'] );
+	$setting->set_field( $field );
 
-    // get the list of errors.
-    $errors = easy_settings_for_wordpress_demo_get_settings_object()->get_errors();
+	// get the list of errors.
+	$errors     = easy_settings_for_wordpress_demo_get_settings_object()->get_errors();
+	$error_list = array();
+	if ( $errors instanceof WP_Error ) {
+		foreach ( $errors->get_error_messages() as $error_message ) {
+			$error_list[] = $error_message;
+		}
+	}
 
 	// add setting.
 	$setting = $settings_obj->add_setting( 'settings_debug_errors' );
@@ -596,50 +602,54 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$setting->prevent_export( true );
 	$field = new TextInfo( $settings_obj );
 	$field->set_title( __( 'Errors', 'easy-settings-for-wordpress-demo' ) );
-	$field->set_description( ! empty( $errors ) ? print_r( $errors, true ) : __( 'None', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( ! empty( $error_list ) ? implode( ',', $error_list ) : __( 'None', 'easy-settings-for-wordpress-demo' ) );
 	$setting->set_field( $field );
 
-    // add a tab on this page.
-    $demo_tab = $settings_page->add_tab( 'demo_settings', 60 );
-    $demo_tab->set_title( __( 'Demo settings', 'easy-settings-for-wordpress-demo' ) );
-    $demo_tab->set_description( '<p>' . __( 'Change settings in the demo to show different views and styles.', 'easy-settings-for-wordpress-demo' ) . '</p>' );
+	// add a tab on this page.
+	$demo_tab = $settings_page->add_tab( 'demo_settings', 60 );
+	$demo_tab->set_title( __( 'Demo settings', 'easy-settings-for-wordpress-demo' ) );
+	$demo_tab->set_description( '<p>' . __( 'Change settings in the demo to show different views and styles.', 'easy-settings-for-wordpress-demo' ) . '</p>' );
 
-    // add a section.
-    $section = $demo_tab->add_section( 'demo_settings', 10 );
-    $section->set_title( __( 'Settings', 'easy-settings-for-wordpress-demo' ) );
+	// add a section.
+	$section = $demo_tab->add_section( 'demo_settings', 10 );
+	$section->set_title( __( 'Settings', 'easy-settings-for-wordpress-demo' ) );
 
-    // add setting
-    $view_setting = $settings_obj->add_setting( 'esfwd_view' );
-    $view_setting->set_type( 'string' );
-    $view_setting->set_default( 'classic' );
-    $view_setting->set_section( $section );
-    $field = new Radio( $settings_obj );
-    $field->set_title( __( 'Choose the view', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_options( array(
-        'classic' => __( 'Classic', 'easy-settings-for-wordpress-demo' ),
-        'dataview' => __( 'DataView', 'easy-settings-for-wordpress-demo' ),
-    ));
-    $view_setting->set_field( $field );
+	// add setting.
+	$view_setting = $settings_obj->add_setting( 'esfwd_view' );
+	$view_setting->set_type( 'string' );
+	$view_setting->set_default( 'classic' );
+	$view_setting->set_section( $section );
+	$field = new Radio( $settings_obj );
+	$field->set_title( __( 'Choose the view', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_options(
+		array(
+			'classic'  => __( 'Classic', 'easy-settings-for-wordpress-demo' ),
+			'dataview' => __( 'DataView', 'easy-settings-for-wordpress-demo' ),
+		)
+	);
+	$view_setting->set_field( $field );
 
-    // add setting
-    $setting = $settings_obj->add_setting( 'esfwd_view_classic_style' );
-    $setting->set_type( 'string' );
-    $setting->set_default( 'horizontal_tabs' );
-    $setting->set_section( $section );
-    $field = new Radio( $settings_obj );
-    $field->set_title( __( 'Choose the alignment', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_options( array(
-        'horizontal_tabs' => __( 'Horizontal tabs', 'easy-settings-for-wordpress-demo' ),
-        'vertical_tabs' => __( 'Vertical tabs', 'easy-settings-for-wordpress-demo' ),
-    ));
-    $field->add_depend( $view_setting, 'classic' );
-    $setting->set_field( $field );
+	// add setting.
+	$setting = $settings_obj->add_setting( 'esfwd_view_classic_style' );
+	$setting->set_type( 'string' );
+	$setting->set_default( 'horizontal_tabs' );
+	$setting->set_section( $section );
+	$field = new Radio( $settings_obj );
+	$field->set_title( __( 'Choose the alignment', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_options(
+		array(
+			'horizontal_tabs' => __( 'Horizontal tabs', 'easy-settings-for-wordpress-demo' ),
+			'vertical_tabs'   => __( 'Vertical tabs', 'easy-settings-for-wordpress-demo' ),
+		)
+	);
+	$field->add_depend( $view_setting, 'classic' );
+	$setting->set_field( $field );
 
-    // add external link as tab.
-    $external_link_tab = $settings_page->add_tab( 'settings_external_link', 100 );
-    $external_link_tab->set_title( __( 'Easy Settings for WordPress Demo', 'easy-settings-for-wordpress-demo' ) );
-    $external_link_tab->set_url( 'https://github.com/threadi/easy-settings-for-wordpress-demo' );
-    $external_link_tab->set_url_target( '_blank' );
+	// add external link as tab.
+	$external_link_tab = $settings_page->add_tab( 'settings_external_link', 100 );
+	$external_link_tab->set_title( __( 'Easy Settings for WordPress Demo', 'easy-settings-for-wordpress-demo' ) );
+	$external_link_tab->set_url( 'https://github.com/threadi/easy-settings-for-wordpress-demo' );
+	$external_link_tab->set_url_target( '_blank' );
 
 	// initialize the settings.
 	$settings_obj->init();
@@ -674,7 +684,7 @@ function easy_settings_for_wordpress_demo_get_settings_object(): Settings {
  * @return string
  */
 function easy_settings_for_wordpress_demo_read_callback(): string {
-    return __( 'Run through read callback changes the value.', 'easy-settings-for-wordpress-demo' );
+	return __( 'Run through read callback changes the value.', 'easy-settings-for-wordpress-demo' );
 }
 
 /**
@@ -684,20 +694,20 @@ function easy_settings_for_wordpress_demo_read_callback(): string {
  * @return string
  */
 function easy_settings_for_wordpress_demo_save_callback( mixed $value ): string {
-    if( ! is_string( $value ) ) {
-        $value = '';
-    }
+	if ( ! is_string( $value ) ) {
+		$value = '';
+	}
 
-    // get the text to use.
-    $text_preset = __( 'Has been removed during saving. Original was:', 'easy-settings-for-wordpress-demo' );
+	// get the text to use.
+	$text_preset = __( 'Has been removed during saving. Original was:', 'easy-settings-for-wordpress-demo' );
 
-    // bail if text is already in the field.
-    if( str_contains( $value, $text_preset ) ) {
-        return $value;
-    }
+	// bail if text is already in the field.
+	if ( str_contains( $value, $text_preset ) ) {
+		return $value;
+	}
 
-    // add the text and return it together with the value.
-    return $text_preset . ' ' . $value;
+	// add the text and return it together with the value.
+	return $text_preset . ' ' . $value;
 }
 
 /**
@@ -706,17 +716,17 @@ function easy_settings_for_wordpress_demo_save_callback( mixed $value ): string 
  * @return void
  */
 function easy_settings_for_wordpress_demo_get_settings_errors(): void {
-    // get the settings object.
-    $settings_obj = easy_settings_for_wordpress_demo_get_settings_object();
+	// get the settings object.
+	$settings_obj = easy_settings_for_wordpress_demo_get_settings_object();
 
-    // bail if we have no errors.
-    if( ! $settings_obj->has_errors() ) {
-        return;
-    }
+	// bail if we have no errors.
+	if ( ! $settings_obj->has_errors() ) {
+		return;
+	}
 
-    // log these errors.
-    foreach( $settings_obj->get_errors()->errors as $key => $errors ) {
-        _doing_it_wrong( '\easySettingsForWordPress\Settings::add_settings()', '<em>' . esc_html( $key ) . '</em>: ' . esc_html( implode( ' ', $errors ) ), '1.0.0' );
-    }
+	// log these errors.
+	foreach ( $settings_obj->get_errors()->errors as $key => $errors ) {
+		_doing_it_wrong( '\easySettingsForWordPress\Settings::add_settings()', '<em>' . esc_html( $key ) . '</em>: ' . esc_html( implode( ' ', $errors ) ), '1.0.0' );
+	}
 }
 add_action( 'admin_init', 'easy_settings_for_wordpress_demo_get_settings_errors', 20 );

@@ -6,6 +6,7 @@ parameters:
   paths:
     - easy-settings-for-wordpress-demo.php
     - settings.php
+    - settings_json.php
     - uninstall.php
   scanFiles:
      - %rootDir%/../../php-stubs/wordpress-stubs/wordpress-stubs.php
