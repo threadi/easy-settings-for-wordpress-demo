@@ -724,8 +724,16 @@ function easy_settings_for_wordpress_demo_get_settings_errors(): void {
 		return;
 	}
 
+	// get the errors.
+	$errors = $settings_obj->get_errors();
+
+	// bail if errors are not set.
+	if ( ! $errors instanceof WP_Error ) {
+		return;
+	}
+
 	// log these errors.
-	foreach ( $settings_obj->get_errors()->errors as $key => $errors ) {
+	foreach ( $errors->errors as $key => $errors ) {
 		_doing_it_wrong( '\easySettingsForWordPress\Settings::add_settings()', '<em>' . esc_html( $key ) . '</em>: ' . esc_html( implode( ' ', $errors ) ), '1.0.0' );
 	}
 }
