@@ -28,6 +28,6 @@
       "dealerdirect/phpcodesniffer-composer-installer": "^1.2"
     },
     "require": {
-      "threadi/easy-settings-for-wordpress": "^2.1.2"
+      "threadi/easy-settings-for-wordpress": "^3.0.0"
     }
 }

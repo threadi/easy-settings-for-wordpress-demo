@@ -16,5 +16,8 @@
     <!-- Use additional rulesets -->
     <rule ref="WordPress-Docs"/>
     <rule ref="WordPress-Extra"/>
-    <rule ref="WordPress" />
+    <rule ref="WordPress">
+        <!-- Excluded in favour to match PSR-4-namings of classes. -->
+        <exclude name="WordPress.Files.FileName"/>
+    </rule>
 </ruleset>

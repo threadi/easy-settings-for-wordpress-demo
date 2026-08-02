@@ -1,0 +1,451 @@
+{
+  "$schema": "https://raw.githubusercontent.com/threadi/easy-settings-for-wordpress/refs/heads/master/settings.schema.json",
+  "slug": "demo_settings_json",
+  "title": "Demo Settings via JSON",
+  "menu_title": "Demo Settings JSON",
+  "menu_slug": "demo-settings-json",
+  "capability": "manage_options",
+  "auto_save": "change",
+  "show_settings_link_in_plugin_list": true,
+  "default_tab": "demo_basic_json",
+  "view": "dataview",
+  "tabs": [
+    {
+      "name": "demo_basic_json",
+      "title": "The fields",
+      "description": "<p>These tab presents the simple fields the composer package \"Easy Settings for WordPress\" support.</p>",
+      "position": 10,
+      "sections": [
+        {
+          "name": "first_section",
+          "title": "Examples for all supported fields",
+          "settings": [
+            {
+              "name": "esfw_json_demo_button",
+              "field": {
+                "type": "Button",
+                "title": "Button",
+                "description": "This is a button. It does not save any value as setting but could be used start an action.",
+                "button_url": "#",
+                "button_title": "Click me",
+                "data": {
+                  "dialog": "{\"title\":\"You clicked me!\",\"texts\":[\"<p></p>\"],\"buttons\":[{\"action\":\"closeDialog();\",\"variant\":\"primary\",\"text\":\"Close\"}]}"
+                },
+                "classes": [
+                  "easy-dialog-for-wordpress"
+                ]
+              }
+            },
+            {
+              "name": "esfw_json_demo_checkbox",
+              "type": "integer",
+              "default": 0,
+              "field": {
+                "type": "Checkbox",
+                "title": "Checkbox",
+                "description": "This is a checkbox. It could be used to enable or disable things."
+              }
+            },
+            {
+              "name": "esfw_json_demo_checkboxes",
+              "type": "array",
+              "default": {
+                "second": 1
+              },
+              "field": {
+                "type": "Checkboxes",
+                "title": "Checkboxes",
+                "description": "These are multiple checkboxes. It could be used to enable or disable multiple things.",
+                "options": {
+                  "first": {
+                    "label": "First"
+                  },
+                  "second": {
+                    "label": "Second"
+                  },
+                  "third": {
+                    "label": "Third"
+                  }
+                }
+              }
+            },
+            {
+              "name": "esfw_json_demo_file",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "File",
+                "title": "File",
+                "description": "This allows you to select an image file from your media library, which will be saved in the settings.",
+                "add_file_title": "Add an image",
+                "remove_file_title": "Remove image"
+              }
+            },
+            {
+              "name": "esfw_json_demo_files",
+              "type": "array",
+              "default": [],
+              "field": {
+                "type": "Files",
+                "title": "Files",
+                "description": "This allows you to select images from your media library, which will be saved in the settings."
+              }
+            },
+            {
+              "name": "esfw_json_demo_multiselect",
+              "type": "array",
+              "default": [
+                "second"
+              ],
+              "field": {
+                "type": "MultiSelect",
+                "title": "Multiple values",
+                "description": "This allows you to choose multiple values from a list.",
+                "options": {
+                  "first": "First",
+                  "second": "Second",
+                  "third": "Third"
+                }
+              }
+            },
+            {
+              "name": "esfw_json_demo_number",
+              "type": "integer",
+              "default": 0,
+              "field": {
+                "type": "Number",
+                "title": "Number",
+                "description": "This allows you to set a number in the settings."
+              }
+            },
+            {
+              "name": "esfw_json_demo_password",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "Password",
+                "title": "Password",
+                "description": "This allows you to set a hidden password in the settings."
+              }
+            },
+            {
+              "name": "esfw_json_demo_permalink_slug",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "PermalinkSlug",
+                "title": "Permalink Slug",
+                "description": "This allows you to set a permalink slug in the settings.",
+                "options": {
+                  "first": "First",
+                  "second": "Second",
+                  "third": "Third"
+                },
+                "list_title": "Choose params"
+              }
+            },
+            {
+              "name": "esfw_json_demo_radio",
+              "type": "string",
+              "default": "first",
+              "field": {
+                "type": "Radio",
+                "title": "Radio",
+                "description": "This allows you to show a set of possible options for a single setting.",
+                "options": {
+                  "first": "First",
+                  "second": "Second",
+                  "third": "Third"
+                }
+              }
+            },
+            {
+              "name": "esfw_json_demo_select",
+              "type": "string",
+              "default": "first",
+              "field": {
+                "type": "Select",
+                "title": "Select",
+                "description": "This allows you to show a set of possible options for a single setting.",
+                "options": {
+                  "first": "First",
+                  "second": "Second",
+                  "third": "Third"
+                }
+              }
+            },
+            {
+              "name": "esfw_json_demo_select_post_type",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "SelectPostTypeObject",
+                "title": "Select a post type object",
+                "description": "This allows you to choose a post type object like a page or a post. We show here how to select a page.",
+                "button_title": "Choose",
+                "cancel_button_title": "Cancel",
+                "chosen_title": "Choose a page",
+                "popup_title": "Choose a page",
+                "popup_description": "Please choose a post type you want to set in the settings.",
+                "endpoint": "/wp-json/wp/v2/pages"
+              }
+            },
+            {
+              "name": "esfw_json_demo_text",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "Text",
+                "title": "Text",
+                "description": "This allows you to add a simple text in the settings.",
+                "placeholder": "This is a placeholder"
+              }
+            },
+            {
+              "name": "esfw_json_demo_textarea",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "Textarea",
+                "title": "Textarea",
+                "description": "This allows you to add a multiline text in the settings.",
+                "placeholder": "This is a placeholder"
+              }
+            },
+            {
+              "name": "esfw_json_demo_textinfo",
+              "field": {
+                "type": "TextInfo",
+                "title": "TextInfo",
+                "description": "This allows you to show a simple text info between the settings. This text here is such a text."
+              }
+            },
+            {
+              "name": "esfw_json_demo_value",
+              "field": {
+                "type": "Value",
+                "title": "Value",
+                "description": "This allows you to show the value of this setting without any change to change it.",
+                "value": "Hallo World"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "dependency_json",
+      "title": "Dependency of fields",
+      "description": "<p>These tab show how fields could be dependent from each other.</p>",
+      "position": 12,
+      "sections": [
+        {
+          "name": "second_section",
+          "title": "Example for dependency of fields",
+          "settings": [
+            {
+              "name": "esfw_json_demo_master_field",
+              "type": "integer",
+              "default": 0,
+              "field": {
+                "type": "Checkbox",
+                "title": "Checkbox",
+                "description": "If this checkbox is enabled, the other settings will be displayed."
+              }
+            },
+            {
+              "name": "esfw_json_demo_slave_field",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "Text",
+                "title": "Text",
+                "description": "This allows you to add a simple text in the settings.",
+                "placeholder": "This is a placeholder",
+                "depends": {
+                  "esfw_json_demo_master_field": 1
+                }
+              }
+            },
+            {
+              "name": "esfw_json_demo_second_slave_field",
+              "type": "string",
+              "default": "first",
+              "field": {
+                "type": "Radio",
+                "title": "Radio",
+                "description": "This allows you to show a set of possible options for a single setting.",
+                "options": {
+                  "first": "First",
+                  "second": "Second",
+                  "third": "Third"
+                },
+                "depends": {
+                  "esfw_json_demo_master_field": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "sections_json",
+      "title": "Sections",
+      "description": "<p>These tab show how fields could be assigned to sections.</p>",
+      "sections": [
+        {
+          "name": "third_section",
+          "title": "First section",
+          "settings": [
+            {
+              "name": "esfw_json_demo_section_field_1",
+              "type": "integer",
+              "default": 0,
+              "field": {
+                "type": "Checkbox",
+                "title": "Checkbox"
+              }
+            }
+          ]
+        },
+        {
+          "name": "fourth_section",
+          "title": "Second section",
+          "settings": [
+            {
+              "name": "esfw_json_demo_section_field_2",
+              "type": "integer",
+              "default": 0,
+              "field": {
+                "type": "Checkbox",
+                "title": "Checkbox"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "subtabs_json",
+      "title": "Sub-Tabs",
+      "description": "<p>These tab show how we could use sub-tabs.</p>",
+      "hide_save": true,
+      "tabs": [
+        {
+          "name": "first_json",
+          "title": "First",
+          "sections": [
+            {
+              "name": "sub_1_tab_section",
+              "title": "Fields in first tab",
+              "settings": [
+                {
+                  "name": "esfw_json_demo_hint_1",
+                  "field": {
+                    "type": "TextInfo",
+                    "title": "Field with hint",
+                    "description": "Fields could be used here in the first sub-tab."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "second_json",
+          "title": "Second",
+          "sections": [
+            {
+              "name": "sub_2_tab_section",
+              "title": "Fields in second tab",
+              "settings": [
+                {
+                  "name": "esfw_json_demo_hint_2",
+                  "field": {
+                    "type": "TextInfo",
+                    "title": "Field with hint",
+                    "description": "Fields could be used here in the second sub-tab."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "third_json",
+          "title": "Third",
+          "sections": [
+            {
+              "name": "sub_3_tab_section",
+              "title": "Fields in third tab",
+              "settings": [
+                {
+                  "name": "esfw_json_demo_hint_3",
+                  "field": {
+                    "type": "TextInfo",
+                    "title": "Field with hint",
+                    "description": "Fields could be used here in the third sub-tab."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "import_export_json",
+      "title": "Import & Export",
+      "hide_save": true,
+      "sections": [
+        {
+          "name": "import_export_section",
+          "title": "Use import and export of settings",
+          "settings": [
+            {
+              "name": "import_settings_json",
+              "prevent_export": true,
+              "show_in_rest": false,
+              "autoload": false,
+              "field": {
+                "type": "Button",
+                "title": "Import",
+                "button_title": "Import now",
+                "classes": [
+                   "easy-dialog-for-wordpress"
+                 ],
+                "data": {
+                  "dialog": "{\"title\":\"Import settings\",\"texts\":[\"<p><strong>Choose the JSON-file with the settings.</strong></p>\",\"<input type=\\\"file\\\" accept=\\\"application/json\\\" name=\\\"import_settings_file\\\" id=\\\"import_settings_file\\\">\"],\"buttons\":[{\"action\":\"esefw_settings_import_file();\",\"variant\":\"primary\",\"text\":\"Import now\"},{\"action\":\"closeDialog();\",\"variant\":\"secondary\",\"text\":\"Cancel\"}]}"
+                }
+              }
+            },
+            {
+              "name": "export_settings_json",
+              "prevent_export": true,
+              "show_in_rest": false,
+              "autoload": false,
+              "field": {
+                "type": "Button",
+                "title": "Export",
+                "button_title": "Export now",
+                "classes": [
+                  "easy-dialog-for-wordpress"
+                ],
+                "data": {
+                  "dialog": "{\"title\":\"Export settings\",\"texts\":[\"<p><strong>Click on the following button to download the settings as JSON-file.</strong></p>\",\"<p>You can import this JSON-file in other projects using this WordPress plugin or theme.</p>\"],\"buttons\":[{\"action\":\"closeDialog();location.href=\\\"DOWNLOAD_URL\\\";\",\"variant\":\"primary\",\"text\":\"Export now\"},{\"action\":\"closeDialog();\",\"variant\":\"secondary\",\"text\":\"Cancel\"}]}"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "settings_external_link_json",
+      "title": "Easy Settings for WordPress Demo",
+      "url": "https://github.com/threadi/easy-settings-for-wordpress-demo",
+      "url_target": "_blank"
+    }
+  ]
+}
