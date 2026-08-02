@@ -41,9 +41,13 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$settings_obj->set_menu_slug( 'demo-settings' ); // set the menu slug.
 	$settings_obj->set_menu_parent_slug( 'options-general.php' ); // set where the settings are assigned to, e.g., 'options-general.php' for the WordPress-own settings menu.
 	$settings_obj->show_settings_link_in_plugin_list( true ); // set to true to show link to settings on plugin list.
-    //$settings_obj->set_method( 'simple' );
-    //$settings_obj->set_view( 'dataview' );
-    //$settings_obj->set_auto_save( 'tab_change' );
+    $settings_obj->set_view( get_option( 'esfwd_view' ) );
+
+    // get the actual for to set its styling.
+    $view = $settings_obj->get_views()->get_view();
+    if( $view instanceof \easySettingsForWordPress\View_Base ) {
+        $view->set_styling( get_option( 'esfwd_view_classic_style' ) );
+    }
 
 	// get the settings page.
 	$settings_page = $settings_obj->get_page( 'demo-settings' );
@@ -416,6 +420,7 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$sub_1_tab = $subtabs_tab->add_tab( 'first', 10 );
 	$sub_1_tab->set_title( __( 'First', 'easy-settings-for-wordpress-demo' ) );
 	$sub_1_tab->set_hide_save( true );
+    $subtabs_tab->set_default_tab( $sub_1_tab );
 
 	// add a tab on this page to demonstration dependency.
 	$sub_2_tab = $subtabs_tab->add_tab( 'second', 20 );
@@ -581,6 +586,9 @@ function easy_settings_for_wordpress_demo_init(): void {
     $field->set_description( $debug['view'] );
     $setting->set_field( $field );
 
+    // get the list of errors.
+    $errors = easy_settings_for_wordpress_demo_get_settings_object()->get_errors();
+
 	// add setting.
 	$setting = $settings_obj->add_setting( 'settings_debug_errors' );
 	$setting->set_section( $debug_section );
@@ -588,17 +596,43 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$setting->prevent_export( true );
 	$field = new TextInfo( $settings_obj );
 	$field->set_title( __( 'Errors', 'easy-settings-for-wordpress-demo' ) );
-	$field->set_description( print_r( easy_settings_for_wordpress_demo_get_settings_object()->get_errors(), true ) );
+	$field->set_description( ! empty( $errors ) ? print_r( $errors, true ) : __( 'None', 'easy-settings-for-wordpress-demo' ) );
 	$setting->set_field( $field );
 
-    // add setting.
-    $setting = $settings_obj->add_setting( 'settings_debug_settings' );
-    $setting->set_section( $debug_section );
-    $setting->set_autoload( false );
-    $setting->prevent_export( true );
-    $field = new TextInfo( $settings_obj );
-    $field->set_title( __( 'Used settings', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( '<code>' . print_r( $debug['settings'], true ) . '</code>' );
+    // add a tab on this page.
+    $demo_tab = $settings_page->add_tab( 'demo_settings', 60 );
+    $demo_tab->set_title( __( 'Demo settings', 'easy-settings-for-wordpress-demo' ) );
+    $demo_tab->set_description( '<p>' . __( 'Change settings in the demo to show different views and styles.', 'easy-settings-for-wordpress-demo' ) . '</p>' );
+
+    // add a section.
+    $section = $demo_tab->add_section( 'demo_settings', 10 );
+    $section->set_title( __( 'Settings', 'easy-settings-for-wordpress-demo' ) );
+
+    // add setting
+    $view_setting = $settings_obj->add_setting( 'esfwd_view' );
+    $view_setting->set_type( 'string' );
+    $view_setting->set_default( 'classic' );
+    $view_setting->set_section( $section );
+    $field = new Radio( $settings_obj );
+    $field->set_title( __( 'Choose the view', 'easy-settings-for-wordpress-demo' ) );
+    $field->set_options( array(
+        'classic' => __( 'Classic', 'easy-settings-for-wordpress-demo' ),
+        'dataview' => __( 'DataView', 'easy-settings-for-wordpress-demo' ),
+    ));
+    $view_setting->set_field( $field );
+
+    // add setting
+    $setting = $settings_obj->add_setting( 'esfwd_view_classic_style' );
+    $setting->set_type( 'string' );
+    $setting->set_default( 'horizontal_tabs' );
+    $setting->set_section( $section );
+    $field = new Radio( $settings_obj );
+    $field->set_title( __( 'Choose the alignment', 'easy-settings-for-wordpress-demo' ) );
+    $field->set_options( array(
+        'horizontal_tabs' => __( 'Horizontal tabs', 'easy-settings-for-wordpress-demo' ),
+        'vertical_tabs' => __( 'Vertical tabs', 'easy-settings-for-wordpress-demo' ),
+    ));
+    $field->add_depend( $view_setting, 'classic' );
     $setting->set_field( $field );
 
     // add external link as tab.
@@ -611,17 +645,6 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$settings_obj->init();
 }
 add_action( 'init', 'easy_settings_for_wordpress_demo_init' );
-
-/**
- * Show a second settings page on base of JSON.
- *
- * @return void
- */
-function easy_settings_for_wordpress_demo_init_second(): void {
-    $settings_obj = easy_settings_for_wordpress_demo_get_settings_object();
-    $settings_obj->set_json_by_path(  __DIR__ . '/example.json' );
-}
-//add_action( 'init', 'easy_settings_for_wordpress_demo_init_second', 20 );
 
 /**
  * Return the settings object.

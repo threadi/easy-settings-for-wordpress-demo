@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/threadi/easy-settings-for-wordpress/refs/heads/master/settings.schema.json",
   "slug": "demo_settings_json",
   "title": "Demo Settings via JSON",
   "menu_title": "Demo Settings JSON",
@@ -7,6 +8,7 @@
   "auto_save": "change",
   "show_settings_link_in_plugin_list": true,
   "default_tab": "demo_basic_json",
+  "view": "dataview",
   "tabs": [
     {
       "name": "demo_basic_json",
@@ -232,7 +234,7 @@
       ]
     },
     {
-      "name": "dependency",
+      "name": "dependency_json",
       "title": "Dependency of fields",
       "description": "<p>These tab show how fields could be dependent from each other.</p>",
       "position": 12,
@@ -288,7 +290,7 @@
       ]
     },
     {
-      "name": "sections",
+      "name": "sections_json",
       "title": "Sections",
       "description": "<p>These tab show how fields could be assigned to sections.</p>",
       "sections": [
@@ -325,13 +327,13 @@
       ]
     },
     {
-      "name": "subtabs",
+      "name": "subtabs_json",
       "title": "Sub-Tabs",
       "description": "<p>These tab show how we could use sub-tabs.</p>",
       "hide_save": true,
       "tabs": [
         {
-          "name": "first",
+          "name": "first_json",
           "title": "First",
           "sections": [
             {
@@ -351,7 +353,7 @@
           ]
         },
         {
-          "name": "second",
+          "name": "second_json",
           "title": "Second",
           "sections": [
             {
@@ -371,7 +373,7 @@
           ]
         },
         {
-          "name": "third",
+          "name": "third_json",
           "title": "Third",
           "sections": [
             {
@@ -393,7 +395,7 @@
       ]
     },
     {
-      "name": "import_export",
+      "name": "import_export_json",
       "title": "Import & Export",
       "hide_save": true,
       "sections": [
@@ -440,7 +442,7 @@
       ]
     },
     {
-      "name": "settings_external_link",
+      "name": "settings_external_link_json",
       "title": "Easy Settings for WordPress Demo",
       "url": "https://github.com/threadi/easy-settings-for-wordpress-demo",
       "url_target": "_blank"

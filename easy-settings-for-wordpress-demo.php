@@ -30,6 +30,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 // this file contains the examples how to use the settings.
 require __DIR__ . '/settings.php';
+require __DIR__ . '/settings_json.php';
 
 /**
  * Register the settings during plugin activation.
