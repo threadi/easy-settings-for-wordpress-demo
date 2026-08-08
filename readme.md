@@ -2,9 +2,7 @@
 
 This repository contains a WordPress demo plugin for the composer package [Easy Settings for WordPress](https://github.com/threadi/easy-settings-for-wordpress). It is intended to show the possibilities of the plugin. It is not intended to be used actively in a productive system. You are welcome to use the programming as a template for your own use of Easy settings for WordPress.
 
-## Use the demo in playground
-
-<kbd>[**Start demo in playground**](https://playground.wordpress.net/?blueprint-url=[https://github.com/threadi/easy-settings-for-wordpress-demo/tree/master/.github/blueprints/demo.json](https://raw.githubusercontent.com/threadi/easy-settings-for-wordpress-demo/master/.github/blueprints/demo.json))</kbd>
+[**Start demo in playground**](https://playground.wordpress.net/?blueprint-url=https://github.com/threadi/easy-settings-for-wordpress-demo/tree/master/.github/blueprints/demo.json)
 
 ## Use the demo in your project
 
@@ -21,13 +19,13 @@ This repository contains a WordPress demo plugin for the composer package [Easy 
 
 ### Release
 
-#### from local environment with ant
+#### From local environment with ant
 
 1. increase the version number in _build/build.properties_.
 2. execute the following command in _build/_: `ant build`
 3. after that you will find a zip file in the release directory, which could be used in WordPress to install it.
 
-#### on GitHub
+#### On GitHub
 
 1. Create a new tag with the new version number.
 2. The release zip will be created by GitHub action.
