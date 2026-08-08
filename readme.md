@@ -4,7 +4,7 @@ This repository contains a WordPress demo plugin for the composer package [Easy 
 
 ## Use the demo in playground
 
-<kbd>[**Start demo in playground**](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/adamziel/blueprints/trunk/blueprints/latest-gutenberg/blueprint.json)</kbd>
+<kbd>[**Start demo in playground**](https://playground.wordpress.net/?blueprint-url=[https://raw.githubusercontent.com/adamziel/blueprints/trunk/blueprints/latest-gutenberg/blueprint.json](https://github.com/threadi/easy-settings-for-wordpress-demo/tree/master/.github/blueprints/demo.json)</kbd>
 
 ## Use the demo in your project
 
