@@ -17,7 +17,7 @@
 // prevent direct access.
 defined( 'ABSPATH' ) || exit;
 
-// do nothing if the PHP version is not 8.0 or newer.
+// do nothing if the PHP version is not 8.2 or newer.
 if ( PHP_VERSION_ID < 80200 ) { // @phpstan-ignore smaller.alwaysFalse
 	return;
 }
