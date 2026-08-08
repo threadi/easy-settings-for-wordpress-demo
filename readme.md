@@ -2,11 +2,11 @@
 
 This repository contains a WordPress demo plugin for the composer package [Easy Settings for WordPress](https://github.com/threadi/easy-settings-for-wordpress). It is intended to show the possibilities of the plugin. It is not intended to be used actively in a productive system. You are welcome to use the programming as a template for your own use of Easy settings for WordPress.
 
-## Hint
+## Use the demo in playground
 
-This demo uses also beta versions of Easy Settings for WordPress.
+<kbd>[**Start demo in playground**](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/adamziel/blueprints/trunk/blueprints/latest-gutenberg/blueprint.json)</kbd>
 
-## Use the demo
+## Use the demo in your project
 
 1. Download the actual release ZIP (not the source ZIP).
 2. Install it in your WordPress and activate it.
