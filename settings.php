@@ -720,7 +720,7 @@ function easy_settings_for_wordpress_demo_get_settings_errors(): void {
 	$settings_obj = easy_settings_for_wordpress_demo_get_settings_object();
 
 	// bail if we have no errors.
-	if ( ! $settings_obj->has_errors() ) {
+    if ( ! method_exists( $settings_obj, 'has_errors' ) || $settings_obj->has_errors() ) { // @phpstan-ignore function.alreadyNarrowedType
 		return;
 	}
 
