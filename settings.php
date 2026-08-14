@@ -48,6 +48,9 @@ function easy_settings_for_wordpress_demo_init(): void {
 	if ( $view instanceof \easySettingsForWordPress\View_Base ) {
 		$view->set_styling( get_option( 'esfwd_view_classic_style' ) );
 	}
+	if ( method_exists( $settings_obj, 'set_update_version' ) ) {
+		$settings_obj->set_update_version( ESFWD_VERSION );
+	}
 
 	// get the settings page.
 	$settings_page = $settings_obj->get_page( 'demo-settings' );
