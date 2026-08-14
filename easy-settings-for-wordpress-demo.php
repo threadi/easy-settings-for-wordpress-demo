@@ -25,6 +25,9 @@ if ( PHP_VERSION_ID < 80200 ) { // @phpstan-ignore smaller.alwaysFalse
 // save our path.
 const ESFWD_FILE = __FILE__;
 
+// set the version.
+const ESFWD_VERSION = '@@VersionNumber@@';
+
 // embed the composer packages.
 require __DIR__ . '/vendor/autoload.php';
 
