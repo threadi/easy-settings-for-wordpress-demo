@@ -29,5 +29,11 @@
     "php-stubs/wp-cli-stubs": "^2.11",
     "phpcompatibility/phpcompatibility-wp": "^2.1",
     "dealerdirect/phpcodesniffer-composer-installer": "^1.2"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
+    }
   }
 }
