@@ -14,6 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Setup WP-CLI
+        uses: godaddy-wordpress/setup-wp-cli@1
+
       - name: Prepare build
         run: |
           composer install
@@ -25,11 +28,14 @@ jobs:
           rm -fr releases
           rm -fr build
 
-      - name: Prepare translations
-        run: wp i18n make-php languages
+      - uses: anchore/sbom-action@v0
 
       - name: Generate autoloader
         run: composer dump-autoload -oa --no-dev
+
+      - name: Generate translation files
+        run: |
+          wp i18n make-php languages
 
       - name: Run PHPStan analyse
         run: vendor/bin/phpstan analyse
