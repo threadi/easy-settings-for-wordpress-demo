@@ -25,6 +25,9 @@ if ( PHP_VERSION_ID < 80200 ) { // @phpstan-ignore smaller.alwaysFalse
 // save our path.
 const ESFWD_FILE = __FILE__;
 
+// set the version.
+const ESFWD_VERSION = '@@VersionNumber@@';
+
 // bail if composer is not used.
 if ( ! file_exists( plugin_dir_path( ESFWD_FILE ) . 'vendor/autoload.php' ) ) {
 	add_action( 'admin_notices', 'easy_settings_for_wordpress_demo_autoloader_missing' );
