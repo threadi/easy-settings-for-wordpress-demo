@@ -1,0 +1,451 @@
+# Copyright (C) 2026 Thomas Zwirner
+# This file is distributed under the GPL-2.0-or-later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy Settings for WordPress Demo @@VersionNumber@@\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-settings-for-wordpress-demo\n"
+"POT-Creation-Date: 2026-08-16 10:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+"X-Domain: easy-settings-for-wordpress-demo\n"
+
+#. Plugin Name of the plugin
+#: easy-settings-for-wordpress-demo.php settings.php:653
+msgid "Easy Settings for WordPress Demo"
+msgstr ""
+
+#. Description of the plugin
+#: easy-settings-for-wordpress-demo.php
+msgid "This plugin demonstrates the usage of the composer package threadi/easy-settings-for-wordpress."
+msgstr ""
+
+#. Author of the plugin
+#: easy-settings-for-wordpress-demo.php
+msgid "Thomas Zwirner"
+msgstr ""
+
+#. Author URI of the plugin
+#: easy-settings-for-wordpress-demo.php
+msgid "https://www.thomaszwirner.de"
+msgstr ""
+
+#. translators: %1$s will be replaced by a URL
+#: easy-settings-for-wordpress-demo.php:59
+#, php-format
+msgid "The plugin <em>Easy Settings for WordPress Demo</em> is missing the Composer autoloader file. Please run `composer install --no-dev -o` in the root folder of the plugin or <a href=\"%1$s\" target=\"_blank\">use a release version</a> including the `vendor` folder."
+msgstr ""
+
+#: settings.php:39
+msgctxt "settings menu title"
+msgid "Demo Settings"
+msgstr ""
+
+#: settings.php:40
+msgid "Demo Settings"
+msgstr ""
+
+#: settings.php:62
+msgid "The fields"
+msgstr ""
+
+#: settings.php:63
+msgid "These tab presents the simple fields the composer package \"Easy Settings for WordPress\" support."
+msgstr ""
+
+#: settings.php:68
+msgid "Examples for all supported fields"
+msgstr ""
+
+#: settings.php:75
+msgid "Click me"
+msgstr ""
+
+#: settings.php:76
+msgid "Button"
+msgstr ""
+
+#: settings.php:77
+msgid "This is a button. It does not save any value as setting but could be used start an action."
+msgstr ""
+
+#: settings.php:83
+msgid "You clicked me!"
+msgstr ""
+
+#: settings.php:91
+msgid "Close"
+msgstr ""
+
+#: settings.php:105 settings.php:348 settings.php:397 settings.php:410
+msgid "Checkbox"
+msgstr ""
+
+#: settings.php:106
+msgid "This is a checkbox. It could be used to enable or disable things."
+msgstr ""
+
+#: settings.php:119
+msgid "Checkboxes"
+msgstr ""
+
+#: settings.php:123 settings.php:174 settings.php:211 settings.php:229
+#: settings.php:246 settings.php:374 settings.php:421
+msgid "First"
+msgstr ""
+
+#: settings.php:126 settings.php:175 settings.php:212 settings.php:230
+#: settings.php:247 settings.php:375 settings.php:427
+msgid "Second"
+msgstr ""
+
+#: settings.php:127
+msgid "Could have a description."
+msgstr ""
+
+#: settings.php:130 settings.php:176 settings.php:213 settings.php:231
+#: settings.php:248 settings.php:376 settings.php:432
+msgid "Third"
+msgstr ""
+
+#: settings.php:134
+msgid "These are multiple checkboxes. It could be used to enable or disable multiple things."
+msgstr ""
+
+#: settings.php:143
+msgid "File"
+msgstr ""
+
+#: settings.php:144
+msgid "This allows you to select an image file from your media library, which will be saved in the settings."
+msgstr ""
+
+#: settings.php:145
+msgid "Add an image"
+msgstr ""
+
+#: settings.php:146
+msgid "Remove image"
+msgstr ""
+
+#: settings.php:155
+msgid "Files"
+msgstr ""
+
+#: settings.php:156
+msgid "This allows you to select images from your media library, which will be saved in the settings."
+msgstr ""
+
+#: settings.php:157
+msgid "Add images"
+msgstr ""
+
+#: settings.php:170
+msgid "Multiple values"
+msgstr ""
+
+#: settings.php:171
+msgid "This allows you to choose multiple values from a list."
+msgstr ""
+
+#: settings.php:187
+msgid "Number"
+msgstr ""
+
+#: settings.php:188
+msgid "This allows you to set a number in the settings."
+msgstr ""
+
+#: settings.php:197
+msgid "Password"
+msgstr ""
+
+#: settings.php:198
+msgid "This allows you to set a hidden password in the settings."
+msgstr ""
+
+#: settings.php:207
+msgid "Permalink Slug"
+msgstr ""
+
+#: settings.php:208
+msgid "Choose params"
+msgstr ""
+
+#: settings.php:216
+msgid "This allows you to set a permalink slug in the settings."
+msgstr ""
+
+#: settings.php:225 settings.php:370
+msgid "Radio"
+msgstr ""
+
+#: settings.php:226 settings.php:243 settings.php:371
+msgid "This allows you to show a set of possible options for a single setting."
+msgstr ""
+
+#: settings.php:242
+msgid "Select"
+msgstr ""
+
+#: settings.php:259
+msgid "Select a post type object"
+msgstr ""
+
+#: settings.php:260
+msgid "This allows you to choose a post type object like a page or a post. We show here how to select a page."
+msgstr ""
+
+#: settings.php:261
+msgid "Choose"
+msgstr ""
+
+#: settings.php:262 settings.php:496 settings.php:529
+msgid "Cancel"
+msgstr ""
+
+#: settings.php:263 settings.php:264
+msgid "Choose a page"
+msgstr ""
+
+#: settings.php:265
+msgid "Please choose a post type you want to set in the settings."
+msgstr ""
+
+#: settings.php:275 settings.php:358
+msgid "Text"
+msgstr ""
+
+#: settings.php:276 settings.php:359
+msgid "This allows you to add a simple text in the settings."
+msgstr ""
+
+#: settings.php:277 settings.php:289 settings.php:301 settings.php:312
+#: settings.php:360
+msgid "This is a placeholder"
+msgstr ""
+
+#: settings.php:287
+msgid "Text with a read callback"
+msgstr ""
+
+#: settings.php:288
+msgid "This field is run through a read callback to change its content."
+msgstr ""
+
+#: settings.php:299
+msgid "Text with a save callback"
+msgstr ""
+
+#: settings.php:300
+msgid "This field is run through a callback to check the content before saving it."
+msgstr ""
+
+#: settings.php:310
+msgid "Textarea"
+msgstr ""
+
+#: settings.php:311
+msgid "This allows you to add a multiline text in the settings."
+msgstr ""
+
+#: settings.php:319
+msgid "TextInfo"
+msgstr ""
+
+#: settings.php:320
+msgid "This allows you to show a simple text info between the settings. This text here is such a text."
+msgstr ""
+
+#: settings.php:328
+msgid "Value"
+msgstr ""
+
+#: settings.php:330
+msgid "This allows you to show the value of this setting without any change to change it."
+msgstr ""
+
+#: settings.php:335
+msgid "Dependency of fields"
+msgstr ""
+
+#: settings.php:336
+msgid "These tab show how fields could be dependent from each other."
+msgstr ""
+
+#: settings.php:340
+msgid "Example for dependency of fields"
+msgstr ""
+
+#: settings.php:349
+msgid "If this checkbox is enabled, the other settings will be displayed."
+msgstr ""
+
+#: settings.php:384
+msgid "Sections"
+msgstr ""
+
+#: settings.php:385
+msgid "These tab show how fields could be assigned to sections."
+msgstr ""
+
+#: settings.php:389
+msgid "First section"
+msgstr ""
+
+#: settings.php:402
+msgid "Second section"
+msgstr ""
+
+#: settings.php:415
+msgid "Sub-Tabs"
+msgstr ""
+
+#: settings.php:416
+msgid "These tab show how we could use sub-tabs."
+msgstr ""
+
+#: settings.php:437
+msgid "Fields in first tab"
+msgstr ""
+
+#: settings.php:443 settings.php:455 settings.php:467
+msgid "Field with hint"
+msgstr ""
+
+#: settings.php:444
+msgid "Fields could be used here in the first sub-tab."
+msgstr ""
+
+#: settings.php:449
+msgid "Fields in second tab"
+msgstr ""
+
+#: settings.php:456
+msgid "Fields could be used here in the second sub-tab."
+msgstr ""
+
+#: settings.php:461
+msgid "Fields in third tab"
+msgstr ""
+
+#: settings.php:468
+msgid "Fields could be used here in the third sub-tab."
+msgstr ""
+
+#: settings.php:473
+msgid "Import & Export"
+msgstr ""
+
+#: settings.php:478 settings.php:554
+msgid "Use import and export of settings"
+msgstr ""
+
+#: settings.php:482
+msgid "Import settings"
+msgstr ""
+
+#: settings.php:484
+msgid "Choose the JSON-file with the settings."
+msgstr ""
+
+#: settings.php:491 settings.php:508
+msgid "Import now"
+msgstr ""
+
+#: settings.php:507
+msgid "Import"
+msgstr ""
+
+#: settings.php:515
+msgid "Export settings"
+msgstr ""
+
+#: settings.php:517
+msgid "Click on the following button to download the settings as JSON-file."
+msgstr ""
+
+#: settings.php:518
+msgid "You can import this JSON-file in other projects using this WordPress plugin or theme."
+msgstr ""
+
+#: settings.php:524 settings.php:541
+msgid "Export now"
+msgstr ""
+
+#: settings.php:540
+msgid "Export"
+msgstr ""
+
+#: settings.php:549
+msgid "Debug"
+msgstr ""
+
+#: settings.php:565
+msgid "Used plugin"
+msgstr ""
+
+#: settings.php:575
+msgid "Used method"
+msgstr ""
+
+#: settings.php:585
+msgid "Used view"
+msgstr ""
+
+#: settings.php:604
+msgid "Errors"
+msgstr ""
+
+#: settings.php:605
+msgid "None"
+msgstr ""
+
+#: settings.php:610
+msgid "Demo settings"
+msgstr ""
+
+#: settings.php:611
+msgid "Change settings in the demo to show different views and styles."
+msgstr ""
+
+#: settings.php:615
+msgid "Settings"
+msgstr ""
+
+#: settings.php:623
+msgid "Choose the view"
+msgstr ""
+
+#: settings.php:626
+msgid "Classic"
+msgstr ""
+
+#: settings.php:627
+msgid "DataView"
+msgstr ""
+
+#: settings.php:641
+msgid "Choose the alignment"
+msgstr ""
+
+#: settings.php:644
+msgid "Horizontal tabs"
+msgstr ""
+
+#: settings.php:645
+msgid "Vertical tabs"
+msgstr ""
+
+#: settings.php:690
+msgid "Run through read callback changes the value."
+msgstr ""
+
+#: settings.php:705
+msgid "Has been removed during saving. Original was:"
+msgstr ""

@@ -1,0 +1,527 @@
+# Copyright (C) 2026 Thomas Zwirner
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy Settings for WordPress Demo @@VersionNumber@@\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-settings-for-"
+"wordpress-demo\n"
+"POT-Creation-Date: 2026-08-16 10:55+0200\n"
+"PO-Revision-Date: 2026-08-16 11:20+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+"X-Domain: easy-settings-for-wordpress-demo\n"
+
+#. Plugin Name of the plugin
+#: easy-settings-for-wordpress-demo.php settings.php:653
+msgid "Easy Settings for WordPress Demo"
+msgstr "Easy Settings für WordPress Demo"
+
+#. Description of the plugin
+#: easy-settings-for-wordpress-demo.php
+msgid ""
+"This plugin demonstrates the usage of the composer package threadi/easy-"
+"settings-for-wordpress."
+msgstr ""
+"Dieses Plugin veranschaulicht die Verwendung des Composer-Pakets \"threadi/"
+"easy-settings-for-wordpress\"."
+
+#. Author of the plugin
+#: easy-settings-for-wordpress-demo.php
+msgid "Thomas Zwirner"
+msgstr "Thomas Zwirner"
+
+#. Author URI of the plugin
+#: easy-settings-for-wordpress-demo.php
+msgid "https://www.thomaszwirner.de"
+msgstr "https://www.thomaszwirner.de"
+
+#. translators: %1$s will be replaced by a URL
+#: easy-settings-for-wordpress-demo.php:59
+#, php-format
+msgid ""
+"The plugin <em>Easy Settings for WordPress Demo</em> is missing the Composer "
+"autoloader file. Please run `composer install --no-dev -o` in the root "
+"folder of the plugin or <a href=\"%1$s\" target=\"_blank\">use a release "
+"version</a> including the `vendor` folder."
+msgstr ""
+"Beim Plugin <em>Easy Settings for WordPress Demo</em> fehlt die Composer-"
+"Autoloader-Datei. Bitte führe im Stammverzeichnis des Plugins den Befehl "
+"`composer install --no-dev -o` aus oder <a href=\"%1$s\" "
+"target=\"_blank\">verwende eine Release-Version</a>, die den Ordner `vendor` "
+"enthält."
+
+#: settings.php:39
+msgctxt "settings menu title"
+msgid "Demo Settings"
+msgstr "Demo Einstellungen"
+
+#: settings.php:40
+msgid "Demo Settings"
+msgstr "Demo Einstellungen"
+
+#: settings.php:62
+msgid "The fields"
+msgstr "Die Felder"
+
+#: settings.php:63
+msgid ""
+"These tab presents the simple fields the composer package \"Easy Settings "
+"for WordPress\" support."
+msgstr ""
+"Auf diesem Tab werden die einfachen Felder vorgestellt, die das Composer-"
+"Paket \"Easy Settings for WordPress\" unterstützt."
+
+#: settings.php:68
+msgid "Examples for all supported fields"
+msgstr "Beispiele für alle unterstützten Felder"
+
+#: settings.php:75
+msgid "Click me"
+msgstr "Klick mich"
+
+#: settings.php:76
+msgid "Button"
+msgstr "Button"
+
+#: settings.php:77
+msgid ""
+"This is a button. It does not save any value as setting but could be used "
+"start an action."
+msgstr ""
+"Dies ist ein Button. Er speichert keinen Wert als Einstellung, kann jedoch "
+"zum Auslösen einer Aktion verwendet werden."
+
+#: settings.php:83
+msgid "You clicked me!"
+msgstr "Du hast mich angeklickt!"
+
+#: settings.php:91
+msgid "Close"
+msgstr "Schließen"
+
+#: settings.php:105 settings.php:348 settings.php:397 settings.php:410
+msgid "Checkbox"
+msgstr "Häkchenfeld"
+
+#: settings.php:106
+msgid "This is a checkbox. It could be used to enable or disable things."
+msgstr ""
+"Dies ist ein Häkchenfeld. Es kann zum Aktivieren oder Deaktivieren von "
+"Funktionen verwendet werden."
+
+#: settings.php:119
+msgid "Checkboxes"
+msgstr "Häkchenfelder"
+
+#: settings.php:123 settings.php:174 settings.php:211 settings.php:229
+#: settings.php:246 settings.php:374 settings.php:421
+msgid "First"
+msgstr "Erster"
+
+#: settings.php:126 settings.php:175 settings.php:212 settings.php:230
+#: settings.php:247 settings.php:375 settings.php:427
+msgid "Second"
+msgstr "Zweiter"
+
+#: settings.php:127
+msgid "Could have a description."
+msgstr "Könnte eine Beschreibung enthalten."
+
+#: settings.php:130 settings.php:176 settings.php:213 settings.php:231
+#: settings.php:248 settings.php:376 settings.php:432
+msgid "Third"
+msgstr "Dritter"
+
+#: settings.php:134
+msgid ""
+"These are multiple checkboxes. It could be used to enable or disable "
+"multiple things."
+msgstr ""
+"Hierbei handelt es sich um mehrere Häkchenfelder. Damit lassen sich mehrere "
+"Optionen aktivieren oder deaktivieren."
+
+#: settings.php:143
+msgid "File"
+msgstr "Datei"
+
+#: settings.php:144
+msgid ""
+"This allows you to select an image file from your media library, which will "
+"be saved in the settings."
+msgstr ""
+"Auf diesem Weg können Sie eine Bilddatei aus ihrer Medienbibliothek "
+"auswählen, die dann in den Einstellungen gespeichert wird."
+
+#: settings.php:145
+msgid "Add an image"
+msgstr "Bild hinzufügen"
+
+#: settings.php:146
+msgid "Remove image"
+msgstr "Bild entfernen"
+
+#: settings.php:155
+msgid "Files"
+msgstr "Dateien"
+
+#: settings.php:156
+msgid ""
+"This allows you to select images from your media library, which will be "
+"saved in the settings."
+msgstr ""
+"Auf diese Weise können Sie Bilder aus ihrer Medienbibliothek auswählen, die "
+"dann in den Einstellungen gespeichert werden."
+
+#: settings.php:157
+msgid "Add images"
+msgstr "Bilder hinzufügen"
+
+#: settings.php:170
+msgid "Multiple values"
+msgstr "Mehrere Werte"
+
+#: settings.php:171
+msgid "This allows you to choose multiple values from a list."
+msgstr "Auf diese Weise kannst du mehrere Werte aus einer Liste auswählen."
+
+#: settings.php:187
+msgid "Number"
+msgstr "Zahlen"
+
+#: settings.php:188
+msgid "This allows you to set a number in the settings."
+msgstr "Das ermöglicht es ihnen eine Zahl in den Einstellungen zu speichern."
+
+#: settings.php:197
+msgid "Password"
+msgstr "Passwort"
+
+#: settings.php:198
+msgid "This allows you to set a hidden password in the settings."
+msgstr ""
+"Das ermöglicht es ihnen ein verstecktes Passwort in den Einstellungen zu "
+"speichern."
+
+#: settings.php:207
+msgid "Permalink Slug"
+msgstr "Permalink Slug"
+
+#: settings.php:208
+msgid "Choose params"
+msgstr "Wähle Parameter"
+
+#: settings.php:216
+msgid "This allows you to set a permalink slug in the settings."
+msgstr ""
+"Das ermöglicht es ihnen einen Permalink Slug in den Einstellungen zu "
+"speichern."
+
+#: settings.php:225 settings.php:370
+msgid "Radio"
+msgstr "Radio"
+
+#: settings.php:226 settings.php:243 settings.php:371
+msgid "This allows you to show a set of possible options for a single setting."
+msgstr ""
+"Auf diese Weise kannst du eine Reihe möglicher Optionen für eine einzelne "
+"Einstellung anzeigen."
+
+#: settings.php:242
+msgid "Select"
+msgstr "Auswählen"
+
+#: settings.php:259
+msgid "Select a post type object"
+msgstr "Wähle das Objekt eines Inhaltstypen"
+
+#: settings.php:260
+msgid ""
+"This allows you to choose a post type object like a page or a post. We show "
+"here how to select a page."
+msgstr ""
+"Auf diese Weise können Sie ein Inhaltstyp wie eine Seite oder einen Beitrag "
+"auswählen. Wir zeigen Ihnen hier, wie sie eine Seite auswählen."
+
+#: settings.php:261
+msgid "Choose"
+msgstr "Wählen"
+
+#: settings.php:262 settings.php:496 settings.php:529
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: settings.php:263 settings.php:264
+msgid "Choose a page"
+msgstr "Wähle eine Seite"
+
+#: settings.php:265
+msgid "Please choose a post type you want to set in the settings."
+msgstr ""
+"Bitte wähle einen Inhaltstyp aus, den du in den Einstellungen festlegen "
+"möchtest."
+
+#: settings.php:275 settings.php:358
+msgid "Text"
+msgstr "Text"
+
+#: settings.php:276 settings.php:359
+msgid "This allows you to add a simple text in the settings."
+msgstr ""
+"Auf diese Weise kannst du in den Einstellungen einen einfachen Text "
+"speichern."
+
+#: settings.php:277 settings.php:289 settings.php:301 settings.php:312
+#: settings.php:360
+msgid "This is a placeholder"
+msgstr "Das ist ein Platzhalter"
+
+#: settings.php:287
+msgid "Text with a read callback"
+msgstr "Text mit einem Lese-Callback"
+
+#: settings.php:288
+msgid "This field is run through a read callback to change its content."
+msgstr "Der Inhalt dieses Feldes wird über einen Lese-Callback geändert."
+
+#: settings.php:299
+msgid "Text with a save callback"
+msgstr "Text mit einem Speicher-Callback"
+
+#: settings.php:300
+msgid ""
+"This field is run through a callback to check the content before saving it."
+msgstr ""
+"Dieses Feld wird über einen Callback verarbeitet, um den Inhalt vor dem "
+"Speichern zu überprüfen."
+
+#: settings.php:310
+msgid "Textarea"
+msgstr "Textarea"
+
+#: settings.php:311
+msgid "This allows you to add a multiline text in the settings."
+msgstr ""
+"Auf diese Weise können Sie in den Einstellungen einen mehrzeiligen Text "
+"hinzufügen."
+
+#: settings.php:319
+msgid "TextInfo"
+msgstr "TextInfo"
+
+#: settings.php:320
+msgid ""
+"This allows you to show a simple text info between the settings. This text "
+"here is such a text."
+msgstr ""
+"Auf diese Weise kannst du zwischen den Einstellungen einen einfachen "
+"Informationstext anzeigen. Dieser Text hier ist ein solcher Text."
+
+#: settings.php:328
+msgid "Value"
+msgstr "Value"
+
+#: settings.php:330
+msgid ""
+"This allows you to show the value of this setting without any change to "
+"change it."
+msgstr ""
+"Auf diese Weise kannst du den Wert dieser Einstellung anzeigen, ohne sie zu "
+"ändern."
+
+#: settings.php:335
+msgid "Dependency of fields"
+msgstr "Abhängigkeiten zwischen Feldern"
+
+#: settings.php:336
+msgid "These tab show how fields could be dependent from each other."
+msgstr ""
+"Diese Registerkarten zeigen, wie Felder voneinander abhängig sein können."
+
+#: settings.php:340
+msgid "Example for dependency of fields"
+msgstr "Beispiel für die Abhängigkeit von Feldern"
+
+#: settings.php:349
+msgid "If this checkbox is enabled, the other settings will be displayed."
+msgstr ""
+"Wenn dieses Häkchenfeld aktiviert ist, werden die weiteren Einstellungen "
+"angezeigt."
+
+#: settings.php:384
+msgid "Sections"
+msgstr "Sektionen"
+
+#: settings.php:385
+msgid "These tab show how fields could be assigned to sections."
+msgstr ""
+"Diese Registerkarten zeigen, wie Felder den Abschnitten zugeordnet werden "
+"können."
+
+#: settings.php:389
+msgid "First section"
+msgstr "Erste Sektion"
+
+#: settings.php:402
+msgid "Second section"
+msgstr "Zweite Sektion"
+
+#: settings.php:415
+msgid "Sub-Tabs"
+msgstr "Unter-Tabs"
+
+#: settings.php:416
+msgid "These tab show how we could use sub-tabs."
+msgstr "Diese Registerkarten zeigen, wie wir Unter-Tabs verwenden könnten."
+
+#: settings.php:437
+msgid "Fields in first tab"
+msgstr "Felder im ersten Tab"
+
+#: settings.php:443 settings.php:455 settings.php:467
+msgid "Field with hint"
+msgstr "Feld mit Hinweis"
+
+#: settings.php:444
+msgid "Fields could be used here in the first sub-tab."
+msgstr "Hier im ersten Unter-Tab könnten Felder verwendet werden."
+
+#: settings.php:449
+msgid "Fields in second tab"
+msgstr "Felder im zweiten Tab"
+
+#: settings.php:456
+msgid "Fields could be used here in the second sub-tab."
+msgstr "Hier im zweiten Unter-Tab könnten Felder verwendet werden."
+
+#: settings.php:461
+msgid "Fields in third tab"
+msgstr "Felder im dritten Tab"
+
+#: settings.php:468
+msgid "Fields could be used here in the third sub-tab."
+msgstr "Hier im dritten Unter-Tab könnten Felder verwendet werden."
+
+#: settings.php:473
+msgid "Import & Export"
+msgstr "Import & Export"
+
+#: settings.php:478 settings.php:554
+msgid "Use import and export of settings"
+msgstr "Import und Export von Einstellungen nutzen"
+
+#: settings.php:482
+msgid "Import settings"
+msgstr "Einstellungen importieren"
+
+#: settings.php:484
+msgid "Choose the JSON-file with the settings."
+msgstr "Wähle die JSON-Datei mit den Einstellungen aus."
+
+#: settings.php:491 settings.php:508
+msgid "Import now"
+msgstr "Jetzt importieren"
+
+#: settings.php:507
+msgid "Import"
+msgstr "Importieren"
+
+#: settings.php:515
+msgid "Export settings"
+msgstr "Einstellungen exportieren"
+
+#: settings.php:517
+msgid "Click on the following button to download the settings as JSON-file."
+msgstr ""
+"Klicke auf die folgende Schaltfläche, um die Einstellungen als JSON-Datei "
+"herunterzuladen."
+
+#: settings.php:518
+msgid ""
+"You can import this JSON-file in other projects using this WordPress plugin "
+"or theme."
+msgstr ""
+"Du kannst diese JSON-Datei mithilfe dieses WordPress-Plugins oder -Themes in "
+"andere Projekte importieren."
+
+#: settings.php:524 settings.php:541
+msgid "Export now"
+msgstr "Jetzt exportieren"
+
+#: settings.php:540
+msgid "Export"
+msgstr "Exportieren"
+
+#: settings.php:549
+msgid "Debug"
+msgstr "Debug"
+
+#: settings.php:565
+msgid "Used plugin"
+msgstr "Verwendetes Plugin"
+
+#: settings.php:575
+msgid "Used method"
+msgstr "Verwendete Methode"
+
+#: settings.php:585
+msgid "Used view"
+msgstr "Verwendeter View"
+
+#: settings.php:604
+msgid "Errors"
+msgstr "Fehler"
+
+#: settings.php:605
+msgid "None"
+msgstr "Keine"
+
+#: settings.php:610
+msgid "Demo settings"
+msgstr "Demo Einstellungen"
+
+#: settings.php:611
+msgid "Change settings in the demo to show different views and styles."
+msgstr ""
+"Änder die Einstellungen in der Demo, um verschiedene Ansichten und Stile "
+"anzuzeigen."
+
+#: settings.php:615
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: settings.php:623
+msgid "Choose the view"
+msgstr "Wähle den View"
+
+#: settings.php:626
+msgid "Classic"
+msgstr "Klassisch"
+
+#: settings.php:627
+msgid "DataView"
+msgstr "DataView"
+
+#: settings.php:641
+msgid "Choose the alignment"
+msgstr "Wähle die Ausrichtung"
+
+#: settings.php:644
+msgid "Horizontal tabs"
+msgstr "Horizontale Tabs"
+
+#: settings.php:645
+msgid "Vertical tabs"
+msgstr "Vertikale Tabs"
+
+#: settings.php:690
+msgid "Run through read callback changes the value."
+msgstr "Die Ausführung des „read“-Callbacks ändert den Wert."
+
+#: settings.php:705
+msgid "Has been removed during saving. Original was:"
+msgstr "Wurde beim Speichern entfernt. Der ursprüngliche Text lautete:"
