@@ -392,26 +392,40 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$first_section->set_title( __( 'First section', 'easy-settings-for-wordpress-demo' ) );
 
 	// add setting for a Checkbox.
-	$master_setting = $settings_obj->add_setting( 'esfw_demo_section_field_1' );
-	$master_setting->set_type( 'integer' );
-	$master_setting->set_default( 0 );
-	$master_setting->set_section( $first_section );
+	$setting = $settings_obj->add_setting( 'esfw_demo_section_field_1' );
+	$setting->set_type( 'integer' );
+	$setting->set_default( 0 );
+	$setting->set_section( $first_section );
 	$field = new Checkbox( $settings_obj );
 	$field->set_title( __( 'Checkbox', 'easy-settings-for-wordpress-demo' ) );
-	$master_setting->set_field( $field );
+	$setting->set_field( $field );
 
 	// add a section.
 	$second_section = $sections_tab->add_section( 'fourth_section', 20 );
 	$second_section->set_title( __( 'Second section', 'easy-settings-for-wordpress-demo' ) );
 
 	// add setting for a Checkbox.
-	$master_setting = $settings_obj->add_setting( 'esfw_demo_section_field_2' );
-	$master_setting->set_type( 'integer' );
-	$master_setting->set_default( 0 );
-	$master_setting->set_section( $second_section );
+	$setting = $settings_obj->add_setting( 'esfw_demo_section_field_2' );
+	$setting->set_type( 'integer' );
+	$setting->set_default( 0 );
+	$setting->set_section( $second_section );
 	$field = new Checkbox( $settings_obj );
 	$field->set_title( __( 'Checkbox', 'easy-settings-for-wordpress-demo' ) );
-	$master_setting->set_field( $field );
+	$setting->set_field( $field );
+
+	// add a section.
+	$third_section = $sections_tab->add_section( 'fifth_section', 20 );
+	$third_section->set_title( __( 'Third section (collapsed)', 'easy-settings-for-wordpress-demo' ) );
+	$third_section->set_collapsed( true );
+
+	// add setting for a Checkbox.
+	$setting = $settings_obj->add_setting( 'esfw_demo_section_field_3' );
+	$setting->set_type( 'integer' );
+	$setting->set_default( 0 );
+	$setting->set_section( $third_section );
+	$field = new Checkbox( $settings_obj );
+	$field->set_title( __( 'Checkbox', 'easy-settings-for-wordpress-demo' ) );
+	$setting->set_field( $field );
 
 	// add a tab on this page to demonstration subtabs.
 	$subtabs_tab = $settings_page->add_tab( 'subtabs', 40 );
@@ -630,6 +644,9 @@ function easy_settings_for_wordpress_demo_init(): void {
 			'dataview' => __( 'DataView', 'easy-settings-for-wordpress-demo' ),
 		)
 	);
+	if ( method_exists( $view_setting, 'set_reload_on_save' ) ) {
+		$view_setting->set_reload_on_save( true );
+	}
 	$view_setting->set_field( $field );
 
 	// add setting.
@@ -723,7 +740,7 @@ function easy_settings_for_wordpress_demo_get_settings_errors(): void {
 	$settings_obj = easy_settings_for_wordpress_demo_get_settings_object();
 
 	// bail if we have no errors.
-	if ( ! $settings_obj->has_errors() ) {
+	if ( ! method_exists( $settings_obj, 'has_errors' ) || $settings_obj->has_errors() ) { // @phpstan-ignore function.alreadyNarrowedType
 		return;
 	}
 

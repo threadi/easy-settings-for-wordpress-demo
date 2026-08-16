@@ -39,6 +39,32 @@ This repository contains a WordPress demo plugin for the composer package [Easy 
 5. Go to the backend of your development environment and activate the plugin.
 6. You are now able to develop on Easy Settings for WordPress and test the changes with the demo plugin.
 
+## Translations
+
+I recommend to use [PoEdit](https://poedit.net/) to translate texts for this plugin.
+
+### Generate pot-file
+
+Run in the main directory:
+
+`wp i18n make-pot . languages/easy-settings-for-wordpress-demo.pot`
+
+### Update translation-file
+
+1. Open .po-file of the language in PoEdit.
+2. Go to "Translate" > "Update from POT-file".
+3. After this the new entries are added to the language-file.
+
+### Export translation-file
+
+1. Open .po-file of the language in PoEdit.
+2. Go to "File" > "Save".
+3. Upload the generated .mo-file and the .po-file to the plugin-folder languages/
+
+### Generate optimized PHP-file
+
+`wp i18n make-php languages`
+
 ## Check for WordPress Coding Standards
 
 ### Initialize

@@ -25,6 +25,9 @@ jobs:
           rm -fr releases
           rm -fr build
 
+      - name: Prepare translations
+        run: wp i18n make-php languages
+
       - name: Generate autoloader
         run: composer dump-autoload -oa --no-dev
 

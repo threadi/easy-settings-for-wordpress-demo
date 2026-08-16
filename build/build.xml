@@ -99,10 +99,12 @@
     <target name="build" description="Builds a new release" depends="init,check-phpstan,check-php-compatibility,check-wcs,setVersionNumber,autoloader-generation">
         <delete file="${build.dir}/${plugin.slug}_${plugin.version}.zip"/>
         <zip destfile="${build.dir}/${plugin.slug}_${plugin.version}.zip">
+			<zipfileset dir="${src.dir}/languages" prefix="${plugin.slug}/languages" />
 			<zipfileset dir="${src.dir}/vendor" includes="autoload.php" prefix="${plugin.slug}/vendor" />
 			<zipfileset dir="${src.dir}/vendor/composer" prefix="${plugin.slug}/vendor/composer" />
+			<zipfileset dir="${src.dir}/vendor/threadi/easy-dialog-for-wordpress/build/" prefix="${plugin.slug}/vendor/threadi/easy-dialog-for-wordpress/build/" />
 			<zipfileset dir="${src.dir}/vendor/threadi/easy-settings-for-wordpress/" prefix="${plugin.slug}/vendor/threadi/easy-settings-for-wordpress/" />
-            <zipfileset dir="${src.dir}" includes="wpml-config.xml,uninstall.php" prefix="${plugin.slug}" />
+            <zipfileset dir="${src.dir}" includes="demo-schema.json,settings.php,settings_json.php,uninstall.php" prefix="${plugin.slug}" />
 			<zipfileset dir="${src.dir}" includes="readme-release.txt" fullpath="${plugin.slug}/readme.txt" />
 			<zipfileset dir="${src.dir}" includes="composer.json" fullpath="${plugin.slug}/composer.json" />
             <zipfileset dir="${src.dir}" includes="${plugin.slug}-release.php" fullpath="${plugin.slug}/${plugin.slug}.php" />
