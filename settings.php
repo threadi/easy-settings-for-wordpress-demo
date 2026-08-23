@@ -13,6 +13,7 @@ use easySettingsForWordPress\Fields\Checkbox;
 use easySettingsForWordPress\Fields\Checkboxes;
 use easySettingsForWordPress\Fields\File;
 use easySettingsForWordPress\Fields\Files;
+use easySettingsForWordPress\Fields\MultiField;
 use easySettingsForWordPress\Fields\MultiSelect;
 use easySettingsForWordPress\Fields\Number;
 use easySettingsForWordPress\Fields\Password;
@@ -20,6 +21,7 @@ use easySettingsForWordPress\Fields\PermalinkSlug;
 use easySettingsForWordPress\Fields\Radio;
 use easySettingsForWordPress\Fields\Select;
 use easySettingsForWordPress\Fields\SelectPostTypeObject;
+use easySettingsForWordPress\Fields\Table;
 use easySettingsForWordPress\Fields\Text;
 use easySettingsForWordPress\Fields\Textarea;
 use easySettingsForWordPress\Fields\TextInfo;
@@ -160,6 +162,24 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$field->set_add_file_title( __( 'Add images', 'easy-settings-for-wordpress-demo' ) );
 	$setting->set_field( $field );
 
+    // add setting for a MultiField.
+    $setting = $settings_obj->add_setting( 'esfw_json_demo_multifield' );
+    $setting->set_type( 'array' );
+    $setting->set_default(
+        array(
+            'first',
+            'second',
+        )
+    );
+    $setting->set_section( $section );
+    $field = new MultiField( $settings_obj );
+    $field->set_title( __( 'Multiple fields', 'easy-settings-for-wordpress-demo' ) );
+    $field->set_description( __( 'This allows you to set the value of multiple fields to a list. Save to get one more field.', 'easy-settings-for-wordpress-demo' ) );
+    $field->set_quantity( count( (array) get_option( 'esfw_json_demo_multifield' ) ) + 1 );
+    $text_field = new Text( $settings_obj );
+    $field->set_field( $text_field );
+    $setting->set_field( $field );
+
 	// add setting for a MultiSelect.
 	$setting = $settings_obj->add_setting( 'esfw_demo_multiselect' );
 	$setting->set_type( 'array' );
@@ -268,6 +288,27 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$field->set_popup_description( __( 'Please choose a post type you want to set in the settings.', 'easy-settings-for-wordpress-demo' ) );
 	$field->set_endpoint( '/wp-json/wp/v2/pages' );
 	$setting->set_field( $field );
+
+    // add setting for a Text.
+    $setting = $settings_obj->add_setting( 'esfw_demo_table' );
+    $setting->set_type( 'array' );
+    $setting->set_default( array(
+        'Demo entry 1',
+        'Demo entry 2',
+    ) );
+    $setting->set_section( $section );
+    $field = new Table( $settings_obj );
+    $field->set_title( __( 'Table', 'easy-settings-for-wordpress-demo' ) );
+    $field->set_description( __( 'This allows you to display entries in a table.', 'easy-settings-for-wordpress-demo' ) );
+    $field->set_table_options(
+        array(
+            array(
+                'url' => 'https://example.com',
+                'icon' => 'Click me'
+            )
+        )
+    );
+    $setting->set_field( $field );
 
 	// add setting for a Text.
 	$setting = $settings_obj->add_setting( 'esfw_demo_text' );

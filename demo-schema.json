@@ -5,7 +5,6 @@
   "menu_title": "Demo Settings JSON",
   "menu_slug": "demo-settings-json",
   "capability": "manage_options",
-  "auto_save": "change",
   "show_settings_link_in_plugin_list": true,
   "default_tab": "demo_basic_json",
   "view": "dataview",
@@ -89,6 +88,19 @@
                 "type": "Files",
                 "title": "Files",
                 "description": "This allows you to select images from your media library, which will be saved in the settings."
+              }
+            },
+            {
+              "name": "esfw_json_demo_multifield",
+              "type": "array",
+              "default": [
+                "first",
+                "second"
+              ],
+              "field": {
+                "type": "MultiField",
+                "title": "Multiple fields",
+                "description": "This allows you to set the value of multiple fields to a list."
               }
             },
             {
@@ -188,6 +200,19 @@
                 "popup_title": "Choose a page",
                 "popup_description": "Please choose a post type you want to set in the settings.",
                 "endpoint": "/wp-json/wp/v2/pages"
+              }
+            },
+            {
+              "name": "esfw_json_demo_table",
+              "type": "array",
+              "default": [ "Demo entry 1", "Demo entry 2" ],
+              "field": {
+                "type": "Table",
+                "title": "Table",
+                "description": "This allows you to display entries in a table.",
+                "table_options": [
+                  { "url": "https://example.com", "icon": "Click me" }
+                ]
               }
             },
             {
