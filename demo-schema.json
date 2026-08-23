@@ -69,6 +69,27 @@
               }
             },
             {
+              "name": "esfw_json_demo_fieldtable",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "FieldTable",
+                "title": "FieldTable",
+                "description": "Allows you to display multiple settings in a table. Each setting will be saved in their own settings field.",
+                "columns": [ "First", "Second" ],
+                "cells": [
+                  [
+                    [ { "name": "esfw_demo_ft_r1_a", "type": "string",  "default": "", "field": { "type": "Text",   "title": "A – Column 1" } } ],
+                    [ { "name": "esfw_demo_ft_r1_b", "type": "integer",  "default": 0, "field": { "type": "Number", "title": "B – Column 1" } } ]
+                  ],
+                  [
+                    [ { "name": "esfw_demo_ft_r2_a", "type": "string",  "default": "",  "field": { "type": "Select", "title": "A – Column 2", "options": { "one": "One", "two": "Two" } } } ],
+                    [ { "name": "esfw_demo_ft_r2_b", "type": "boolean",  "default": false, "field": { "type": "Checkbox", "title": "B – Column 2" } } ]
+                  ]
+                ]
+              }
+            },
+            {
               "name": "esfw_json_demo_file",
               "type": "string",
               "default": "",
@@ -100,7 +121,10 @@
               "field": {
                 "type": "MultiField",
                 "title": "Multiple fields",
-                "description": "This allows you to set the value of multiple fields to a list."
+                "description": "This allows you to set the value of multiple fields to a list.",
+                "field": {
+                  "type": "Text"
+                }
               }
             },
             {
