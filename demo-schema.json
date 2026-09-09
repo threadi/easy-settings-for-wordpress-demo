@@ -79,6 +79,27 @@
               }
             },
             {
+              "name": "esfw_json_demo_fieldtable",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "FieldTable",
+                "title": "FieldTable",
+                "description": "Allows you to display multiple settings in a table. Each setting will be saved in their own settings field.",
+                "columns": [ "First", "Second" ],
+                "cells": [
+                  [
+                    [ { "name": "esfw_demo_ft_r1_a", "type": "string",  "default": "", "field": { "type": "Text",   "title": "A – Column 1" } } ],
+                    [ { "name": "esfw_demo_ft_r1_b", "type": "integer",  "default": 0, "field": { "type": "Number", "title": "B – Column 1" } } ]
+                  ],
+                  [
+                    [ { "name": "esfw_demo_ft_r2_a", "type": "string",  "default": "",  "field": { "type": "Select", "title": "A – Column 2", "options": { "one": "One", "two": "Two" } } } ],
+                    [ { "name": "esfw_demo_ft_r2_b", "type": "boolean",  "default": false, "field": { "type": "Checkbox", "title": "B – Column 2" } } ]
+                  ]
+                ]
+              }
+            },
+            {
               "name": "esfw_json_demo_file",
               "type": "string",
               "default": "",
@@ -98,6 +119,22 @@
                 "type": "Files",
                 "title": "Files",
                 "description": "This allows you to select images from your media library, which will be saved in the settings."
+              }
+            },
+            {
+              "name": "esfw_json_demo_multifield",
+              "type": "array",
+              "default": [
+                "first",
+                "second"
+              ],
+              "field": {
+                "type": "MultiField",
+                "title": "Multiple fields",
+                "description": "This allows you to set the value of multiple fields to a list.",
+                "field": {
+                  "type": "Text"
+                }
               }
             },
             {
@@ -197,6 +234,19 @@
                 "popup_title": "Choose a page",
                 "popup_description": "Please choose a post type you want to set in the settings.",
                 "endpoint": "/wp-json/wp/v2/pages"
+              }
+            },
+            {
+              "name": "esfw_json_demo_table",
+              "type": "array",
+              "default": [ "Demo entry 1", "Demo entry 2" ],
+              "field": {
+                "type": "Table",
+                "title": "Table",
+                "description": "This allows you to display entries in a table.",
+                "table_options": [
+                  { "url": "https://example.com", "icon": "Click me" }
+                ]
               }
             },
             {
