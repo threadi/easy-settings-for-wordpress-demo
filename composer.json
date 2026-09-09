@@ -1,6 +1,6 @@
 {
     "name": "threadi/easys-settings-for-wordpress-demo",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "config": {
       "allow-plugins": {
         "dealerdirect/phpcodesniffer-composer-installer": true,
