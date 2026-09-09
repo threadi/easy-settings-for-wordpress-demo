@@ -46,7 +46,7 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$settings_obj->set_menu_parent_slug( 'options-general.php' ); // set where the settings are assigned to, e.g., 'options-general.php' for the WordPress-own settings menu.
 	$settings_obj->show_settings_link_in_plugin_list( true ); // set to true to show link to settings on plugin list.
 	$settings_obj->set_view( get_option( 'esfwd_view' ) );
-    $settings_obj->set_method( 'one' );
+	$settings_obj->set_method( 'one' );
 
 	// get the actual for to set its styling.
 	$view = $settings_obj->get_views()->get_view();
@@ -175,80 +175,84 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$field->set_add_file_title( __( 'Add images', 'easy-settings-for-wordpress-demo' ) );
 	$setting->set_field( $field );
 
-    // add setting for FieldTable.
-    $setting = $settings_obj->add_setting( 'esfw_demo_fieldtable' );
-    $setting->set_type( 'string' );
-    $setting->set_default( '' );
-    $setting->set_section( $section );
-    $field = new FieldTable( $settings_obj );
-    $field->set_title( __( 'FieldTable', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( __( 'Allows you to display multiple settings in a table. Each setting will be saved in their own settings field.', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_columns( array(
-        'First',
-        'Second',
-    ) );
+	// add setting for FieldTable.
+	$setting = $settings_obj->add_setting( 'esfw_demo_fieldtable' );
+	$setting->set_type( 'string' );
+	$setting->set_default( '' );
+	$setting->set_section( $section );
+	$field = new FieldTable( $settings_obj );
+	$field->set_title( __( 'FieldTable', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( __( 'Allows you to display multiple settings in a table. Each setting will be saved in their own settings field.', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_columns(
+		array(
+			'First',
+			'Second',
+		)
+	);
 
-    // add new row in the table.
-    $field->add_row();
+	// add new row in the table.
+	$field->add_row();
 
-    // add setting.
-    $field_setting = $settings_obj->add_setting('esfw_demo_ft_r1_a' );
-    $field_setting->set_type('text' );
-    $field_setting->set_default( '' );
-    $field_setting_field = new Text($settings_obj);
-    $field_setting->set_field($field_setting_field);
-    $field->add_setting($field_setting, 0, 0 );
+	// add setting.
+	$field_setting = $settings_obj->add_setting( 'esfw_demo_ft_r1_a' );
+	$field_setting->set_type( 'text' );
+	$field_setting->set_default( '' );
+	$field_setting_field = new Text( $settings_obj );
+	$field_setting->set_field( $field_setting_field );
+	$field->add_setting( $field_setting, 0, 0 );
 
-    // add setting.
-    $field_setting = $settings_obj->add_setting('esfw_demo_ft_r1_b' );
-    $field_setting->set_type('text' );
-    $field_setting->set_default( '' );
-    $field_setting_field = new Number($settings_obj);
-    $field_setting->set_field($field_setting_field);
-    $field->add_setting($field_setting, 0, 1 );
+	// add setting.
+	$field_setting = $settings_obj->add_setting( 'esfw_demo_ft_r1_b' );
+	$field_setting->set_type( 'text' );
+	$field_setting->set_default( '' );
+	$field_setting_field = new Number( $settings_obj );
+	$field_setting->set_field( $field_setting_field );
+	$field->add_setting( $field_setting, 0, 1 );
 
-    // add new row in the table.
-    $field->add_row();
+	// add new row in the table.
+	$field->add_row();
 
-    // add setting.
-    $field_setting = $settings_obj->add_setting('esfw_demo_ft_r2_a' );
-    $field_setting->set_type('text' );
-    $field_setting->set_default( '' );
-    $field_setting_field = new Select($settings_obj);
-    $field_setting_field->set_options( array(
-        'one' => __( 'One', 'easy-settings-for-wordpress-demo' ),
-        'two' => __( 'Two', 'easy-settings-for-wordpress-demo' ),
-    ));
-    $field_setting->set_field($field_setting_field);
-    $field->add_setting($field_setting, 1, 0 );
+	// add setting.
+	$field_setting = $settings_obj->add_setting( 'esfw_demo_ft_r2_a' );
+	$field_setting->set_type( 'text' );
+	$field_setting->set_default( '' );
+	$field_setting_field = new Select( $settings_obj );
+	$field_setting_field->set_options(
+		array(
+			'one' => __( 'One', 'easy-settings-for-wordpress-demo' ),
+			'two' => __( 'Two', 'easy-settings-for-wordpress-demo' ),
+		)
+	);
+	$field_setting->set_field( $field_setting_field );
+	$field->add_setting( $field_setting, 1, 0 );
 
-    // add setting.
-    $field_setting = $settings_obj->add_setting('esfw_demo_ft_r2_b' );
-    $field_setting->set_default( 0 );
-    $field_setting_field = new Checkbox($settings_obj);
-    $field_setting->set_field($field_setting_field);
-    $field->add_setting($field_setting, 1, 1 );
+	// add setting.
+	$field_setting = $settings_obj->add_setting( 'esfw_demo_ft_r2_b' );
+	$field_setting->set_default( 0 );
+	$field_setting_field = new Checkbox( $settings_obj );
+	$field_setting->set_field( $field_setting_field );
+	$field->add_setting( $field_setting, 1, 1 );
 
-    // set the configured field table to the setting.
-    $setting->set_field( $field );
+	// set the configured field table to the setting.
+	$setting->set_field( $field );
 
-    // add setting for a MultiField.
-    $setting = $settings_obj->add_setting( 'esfw_json_demo_multifield' );
-    $setting->set_type( 'array' );
-    $setting->set_default(
-        array(
-            'first',
-            'second',
-        )
-    );
-    $setting->set_section( $section );
-    $field = new MultiField( $settings_obj );
-    $field->set_title( __( 'Multiple fields', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( __( 'This allows you to set the value of multiple fields to a list. Save to get one more field.', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_quantity( count( (array) get_option( 'esfw_json_demo_multifield' ) ) + 1 );
-    $text_field = new Text( $settings_obj );
-    $field->set_field( $text_field );
-    $setting->set_field( $field );
+	// add setting for a MultiField.
+	$setting = $settings_obj->add_setting( 'esfw_json_demo_multifield' );
+	$setting->set_type( 'array' );
+	$setting->set_default(
+		array(
+			'first',
+			'second',
+		)
+	);
+	$setting->set_section( $section );
+	$field = new MultiField( $settings_obj );
+	$field->set_title( __( 'Multiple fields', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( __( 'This allows you to set the value of multiple fields to a list. Save to get one more field.', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_quantity( count( (array) get_option( 'esfw_json_demo_multifield' ) ) + 1 );
+	$text_field = new Text( $settings_obj );
+	$field->set_field( $text_field );
+	$setting->set_field( $field );
 
 	// add setting for a MultiSelect.
 	$setting = $settings_obj->add_setting( 'esfw_demo_multiselect' );
@@ -359,26 +363,28 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$field->set_endpoint( '/wp-json/wp/v2/pages' );
 	$setting->set_field( $field );
 
-    // add setting for a Text.
-    $setting = $settings_obj->add_setting( 'esfw_demo_table' );
-    $setting->set_type( 'array' );
-    $setting->set_default( array(
-        'Demo entry 1',
-        'Demo entry 2',
-    ) );
-    $setting->set_section( $section );
-    $field = new Table( $settings_obj );
-    $field->set_title( __( 'Table', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_description( __( 'This allows you to display entries in a table.', 'easy-settings-for-wordpress-demo' ) );
-    $field->set_table_options(
-        array(
-            array(
-                'url' => 'https://example.com',
-                'icon' => 'Click me'
-            )
-        )
-    );
-    $setting->set_field( $field );
+	// add setting for a Text.
+	$setting = $settings_obj->add_setting( 'esfw_demo_table' );
+	$setting->set_type( 'array' );
+	$setting->set_default(
+		array(
+			'Demo entry 1',
+			'Demo entry 2',
+		)
+	);
+	$setting->set_section( $section );
+	$field = new Table( $settings_obj );
+	$field->set_title( __( 'Table', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( __( 'This allows you to display entries in a table.', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_table_options(
+		array(
+			array(
+				'url'  => 'https://example.com',
+				'icon' => 'Click me',
+			),
+		)
+	);
+	$setting->set_field( $field );
 
 	// add setting for a Text.
 	$setting = $settings_obj->add_setting( 'esfw_demo_text' );
