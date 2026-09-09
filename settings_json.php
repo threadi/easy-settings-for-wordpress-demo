@@ -16,9 +16,9 @@ use easySettingsForWordPress\Settings;
  * @return void
  */
 function easy_settings_for_wordpress_demo_init_second(): void {
-    $settings_obj = new Settings( ESFWD_FILE );
+	$settings_obj = new Settings( ESFWD_FILE );
 	$settings_obj->set_json_by_path( __DIR__ . '/demo-schema.json' );
-    $settings_obj->set_translations( array( 'plugin_settings_title' => __( 'JSON settings', 'easy-settings-for-wordpress-demo' ) ) );
+	$settings_obj->set_translations( array( 'plugin_settings_title' => __( 'JSON settings', 'easy-settings-for-wordpress-demo' ) ) );
 	$settings_obj->init();
 }
 add_action( 'init', 'easy_settings_for_wordpress_demo_init_second', 20 );
