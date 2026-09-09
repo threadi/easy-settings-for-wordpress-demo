@@ -11,6 +11,7 @@ defined( 'ABSPATH' ) || exit;
 use easySettingsForWordPress\Fields\Button;
 use easySettingsForWordPress\Fields\Checkbox;
 use easySettingsForWordPress\Fields\Checkboxes;
+use easySettingsForWordPress\Fields\Color;
 use easySettingsForWordPress\Fields\File;
 use easySettingsForWordPress\Fields\Files;
 use easySettingsForWordPress\Fields\MultiSelect;
@@ -135,6 +136,16 @@ function easy_settings_for_wordpress_demo_init(): void {
 		)
 	);
 	$field->set_description( __( 'These are multiple checkboxes. It could be used to enable or disable multiple things.', 'easy-settings-for-wordpress-demo' ) );
+	$setting->set_field( $field );
+
+	// add setting for multiple Checkboxes.
+	$setting = $settings_obj->add_setting( 'esfw_demo_color' );
+	$setting->set_type( 'string' );
+	$setting->set_default( '' );
+	$setting->set_section( $section );
+	$field = new Color( $settings_obj );
+	$field->set_title( __( 'Color', 'easy-settings-for-wordpress-demo' ) );
+	$field->set_description( __( 'Choose a color.', 'easy-settings-for-wordpress-demo' ) );
 	$setting->set_field( $field );
 
 	// add setting for a File.
