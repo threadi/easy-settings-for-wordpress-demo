@@ -69,6 +69,16 @@
               }
             },
             {
+              "name": "esfw_json_demo_color",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "Color",
+                "title": "Color",
+                "description": "Choose a color."
+              }
+            },
+            {
               "name": "esfw_json_demo_fieldtable",
               "type": "string",
               "default": "",
