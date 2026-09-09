@@ -46,6 +46,7 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$settings_obj->set_menu_parent_slug( 'options-general.php' ); // set where the settings are assigned to, e.g., 'options-general.php' for the WordPress-own settings menu.
 	$settings_obj->show_settings_link_in_plugin_list( true ); // set to true to show link to settings on plugin list.
 	$settings_obj->set_view( get_option( 'esfwd_view' ) );
+    $settings_obj->set_method( 'one' );
 
 	// get the actual for to set its styling.
 	$view = $settings_obj->get_views()->get_view();
@@ -524,7 +525,7 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$setting->set_field( $field );
 
 	// add a section.
-	$third_section = $sections_tab->add_section( 'fifth_section', 20 );
+	$third_section = $sections_tab->add_section( 'fifth_section', 30 );
 	$third_section->set_title( __( 'Third section (collapsed)', 'easy-settings-for-wordpress-demo' ) );
 	$third_section->set_collapsed( true );
 
