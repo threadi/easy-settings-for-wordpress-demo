@@ -5,7 +5,6 @@
   "menu_title": "Demo Settings JSON",
   "menu_slug": "demo-settings-json",
   "capability": "manage_options",
-  "auto_save": "change",
   "show_settings_link_in_plugin_list": true,
   "default_tab": "demo_basic_json",
   "view": "dataview",
@@ -67,6 +66,16 @@
                     "label": "Third"
                   }
                 }
+              }
+            },
+            {
+              "name": "esfw_json_demo_color",
+              "type": "string",
+              "default": "",
+              "field": {
+                "type": "Color",
+                "title": "Color",
+                "description": "Choose a color."
               }
             },
             {

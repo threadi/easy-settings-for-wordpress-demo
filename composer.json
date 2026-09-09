@@ -1,6 +1,6 @@
 {
     "name": "threadi/easys-settings-for-wordpress-demo",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "config": {
       "allow-plugins": {
         "dealerdirect/phpcodesniffer-composer-installer": true,
@@ -13,7 +13,7 @@
       "platform-check": false
     },
     "require-dev": {
-      "wp-coding-standards/wpcs": "^3.1.0",
+      "wp-coding-standards/wpcs": "^3.4.1",
       "automattic/vipwpcs": "^3.0",
       "phpstan/phpstan": "^2.1",
       "szepeviktor/phpstan-wordpress": "^2.0",
