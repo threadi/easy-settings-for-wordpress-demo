@@ -555,10 +555,10 @@ function easy_settings_for_wordpress_demo_init(): void {
 	$sub_1_tab->set_hide_save( true );
 	$subtabs_tab->set_default_tab( $sub_1_tab );
 
-    // add a tab on this page to demonstration dependency.
-    $sub_3_tab = $subtabs_tab->add_tab( 'third', 30 );
-    $sub_3_tab->set_title( __( 'Third', 'easy-settings-for-wordpress-demo' ) );
-    $sub_3_tab->set_hide_save( true );
+	// add a tab on this page to demonstration dependency.
+	$sub_3_tab = $subtabs_tab->add_tab( 'third', 30 );
+	$sub_3_tab->set_title( __( 'Third', 'easy-settings-for-wordpress-demo' ) );
+	$sub_3_tab->set_hide_save( true );
 
 	// add a tab on this page to demonstration dependency.
 	$sub_2_tab = $subtabs_tab->add_tab( 'second', 20 );
