@@ -8,6 +8,7 @@
   "show_settings_link_in_plugin_list": true,
   "default_tab": "demo_basic_json",
   "view": "dataview",
+  "method": "one",
   "tabs": [
     {
       "name": "demo_basic_json",
