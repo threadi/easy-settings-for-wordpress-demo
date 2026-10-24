@@ -59,6 +59,7 @@ jobs:
 
       - name: Clean up directory
         run: |
+          rm .gitattributes
           rm phpcs.xml.dist
 
       - name: Run PCP check
