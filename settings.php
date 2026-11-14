@@ -21,6 +21,7 @@ use easySettingsForWordPress\Fields\Number;
 use easySettingsForWordPress\Fields\Password;
 use easySettingsForWordPress\Fields\PermalinkSlug;
 use easySettingsForWordPress\Fields\Radio;
+use easySettingsForWordPress\Fields\Range;
 use easySettingsForWordPress\Fields\Select;
 use easySettingsForWordPress\Fields\SelectPostTypeObject;
 use easySettingsForWordPress\Fields\Table;
@@ -328,6 +329,18 @@ function easy_settings_for_wordpress_demo_init(): void {
 		)
 	);
 	$setting->set_field( $field );
+
+    // add setting for a Radio.
+    $setting = $settings_obj->add_setting( 'esfw_demo_range' );
+    $setting->set_type( 'array' );
+    $setting->set_default( array( 'min' => 20, 'max' => 80 ) );
+    $setting->set_section( $section );
+    $field = new Range( $settings_obj );
+    $field->set_min( 0 );
+    $field->set_max( 500 );
+    $field->set_step( 0.5 );
+    $field->set_min_gap( 10 );
+    $setting->set_field( $field );
 
 	// add setting for a Select.
 	$setting = $settings_obj->add_setting( 'esfw_demo_select' );

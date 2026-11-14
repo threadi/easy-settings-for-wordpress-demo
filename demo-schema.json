@@ -207,6 +207,19 @@
               }
             },
             {
+              "name": "esfw_json_demo_range",
+              "type": "array",
+              "default": {
+                "min": 20,
+                "max": 80
+              },
+              "field": {
+                "type": "Range",
+                "title": "Range",
+                "description": "This allows you to show a set of possible options for a single setting."
+              }
+            },
+            {
               "name": "esfw_json_demo_select",
               "type": "string",
               "default": "first",
